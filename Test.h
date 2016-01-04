@@ -9,3 +9,6 @@
 
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <iterator>
+#include <algorithm>
