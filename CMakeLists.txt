@@ -9,5 +9,7 @@ set(SOURCE_FILES Test.cpp Test.h)
 
 add_executable(CPP11FeaturesStudy ${SOURCE_FILES})
 
+add_executable(Lambda Lambda/TestLambda.cpp)
+
 add_executable(CPP11FeaturesStudy2 BoostTest/BoostTest.cpp)
 target_link_libraries(CPP11FeaturesStudy2 /usr/local/lib/libboost_regex.so)
