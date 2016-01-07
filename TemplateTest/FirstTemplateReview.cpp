@@ -81,9 +81,12 @@ void SayHello() {
     return;
 }
 
+//Member Function As Parameter
 template<void (yche::A<3>::*member_function)()>
 void yche::D<member_function>::CallMemberFunction() {
-    member_function();
+    A<3> a;
+    std::cout << "Called From D,Hi ;";
+    (a.*member_function)();
 
 }
 
