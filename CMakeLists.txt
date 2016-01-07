@@ -5,11 +5,15 @@ set(Boost_LIBRARY_DIR /usr/local/lib)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES Test.cpp Test.h)
+#CppPrimer Basic Test
+add_executable(CPP11FeaturesStudy PrimerTest/Test.cpp PrimerTest/Test.h)
 
-add_executable(CPP11FeaturesStudy ${SOURCE_FILES})
+#LambdaTest
+add_executable(LambdaTest LambdaTest/TestLambda.cpp LambdaTest/lambda.h)
 
-add_executable(Lambda Lambda/TestLambda.cpp Lambda/lambda.h)
-
+#BoostTest
 add_executable(CPP11FeaturesStudy2 BoostTest/BoostTest.cpp)
 target_link_libraries(CPP11FeaturesStudy2 /usr/local/lib/libboost_regex.so)
+
+#TemplateTest
+add_executable(TemplateTEst TemplateTEst/TestTemplates.cpp)

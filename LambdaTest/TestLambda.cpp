@@ -7,7 +7,7 @@ using namespace std;
 using namespace yche;
 
 void testFunctionalWithLambda() {
-    //Reference Lambda function through a function wrapper
+    //Reference LambdaTest function through a function wrapper
     //So that Compiler knows it's return and argument type
     function<int(int)> fib;
     fib = [&fib](int i) -> int {
