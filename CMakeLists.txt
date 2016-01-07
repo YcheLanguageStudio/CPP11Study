@@ -16,4 +16,5 @@ add_executable(CPP11FeaturesStudy2 BoostTest/BoostTest.cpp)
 target_link_libraries(CPP11FeaturesStudy2 /usr/local/lib/libboost_regex.so)
 
 #TemplateTest
-add_executable(TemplateTEst TemplateTEst/TestTemplates.cpp)
+add_executable(TemplateReview TemplateTest/FirstTemplateReview.cpp TemplateTest/FirstTemplateReview.h)
+add_executable(TemplateTest TemplateTest/TestTemplates.cpp)
