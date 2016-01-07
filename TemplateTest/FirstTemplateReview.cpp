@@ -43,21 +43,71 @@ void TestTemplateFunctionAdd() {
 }
 
 template<typename T, typename R>
-T yche::GetValue(R param) {
+T yche::CppStyleCast(R param) {
     return static_cast<T>(param);
 }
 
-void TestTemplateFuctionGetValue() {
-    int i = 1;
-    //Must specify float, Since compiler could not deduce from the return type
-    float a = yche::GetValue<float>(i);
+template<typename DstT, typename SrcT>
+DstT yche::CStypleCast(SrcT src_param) {
+    return (DstT) (src_param);
 }
 
+void TestTemplateFunctionCastValue() {
+    int i = 1;
+    //Must specify float
+    //Since compiler could not deduce from the return type
+
+    float a = yche::CppStyleCast<float>(i);
+    std::cout << "Cpp Style After cast:" << a << " ,Before:" << i << std::endl;
+
+    a = yche::CStypleCast<float>(i);
+    std::cout << "C Styple After cast:" << a << " ,Before:" << i << std::endl;
+}
+
+//Third: Integer As Template Parameter
+template<int i>
+void yche::A<i>::Foo() {
+    std::cout << "Called From A, Hello,Fooer " << i << std::endl;
+}
+
+template<bool my_bool, void (*function)()>
+void yche::C<my_bool, function>::CallFunction() {
+    if (my_bool == false)
+        function();
+}
+
+void SayHello() {
+    std::cout << "Called From C,Hello" << std::endl;
+    return;
+}
+
+template<void (yche::A<3>::*member_function)()>
+void yche::D<member_function>::CallMemberFunction() {
+    member_function();
+
+}
+
+void TestPrimitiveTypeAsParam() {
+    yche::A<5> fooer;
+    fooer.Foo();
+
+    yche::B<7, yche::A<5>, nullptr> b;
+
+    yche::C<false, SayHello> c;
+    c.CallFunction();
+
+    yche::D<&yche::A<3>::Foo> d;
+    d.CallMemberFunction();
+
+    std::cout << "From Add,2+3:" << yche::Add<2>(3) << std::endl;
+}
 
 int main() {
     TestTemplateClass();
     TestTemplateFunctionAdd();
-    TestTemplateFuctionGetValue();
+    TestTemplateFunctionCastValue();
+    TestPrimitiveTypeAsParam();
 }
+
 
 
