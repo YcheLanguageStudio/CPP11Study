@@ -21,3 +21,4 @@ add_executable(TemplateSecond TemplateTest/SecondChapter/SecondTemplateSpecializ
 add_executable(TemplateThird TemplateTest/ThirdChapter/ThirdTemplateStudy.cpp TemplateTest/ThirdChapter/ThirdTemplateStudy.h)
 add_executable(TemplateThirdTrueType TemplateTest/ThirdChapter/ThirdTemplateTrueType.h TemplateTest/ThirdChapter/ThirdTemplateTrueType.cpp)
 add_executable(TemplateTest TemplateTest/TestTemplates.cpp)
+add_executable(BoostTestBGL BoostTest/BGLTest.cpp)
