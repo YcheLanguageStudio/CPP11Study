@@ -14,6 +14,7 @@ public:
         cout << "test_uptr"<<*test_uptr_ << endl;
     }
 };
+
 int main(){
     unique_ptr<int> u_ptr4;
     unique_ptr<int> u_ptr2(new int(2));

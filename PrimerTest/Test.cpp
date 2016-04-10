@@ -44,6 +44,10 @@ void error_msg(std::initializer_list<std::string> il){
 
 //Never Return a Reference or Pointer to a Local Object
 
+int test_reference(int& reference){
+    reference = 2222;
+}
+
 int main(){
     for(size_t i =0 ; i !=10; ++i){
         std::cout << count_calls() << std::endl;
@@ -58,5 +62,7 @@ int main(){
     print(arr);
     error_msg({"a","bv","d"});
 
-
+    int a = 3333;
+    test_reference(a);
+    std::cout << a << std::endl;
 }
