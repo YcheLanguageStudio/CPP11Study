@@ -57,8 +57,7 @@ typedef adjacency_list
 int main() {
     Graph g;
 
-    typedef property_map<Graph, vertex_location_t>::type vertex_location_map_t;
-    vertex_location_map_t vertex_location_map = boost::get(vertex_location, g);
+    typename property_map<Graph, vertex_location_t>::type vertex_location_map = boost::get(vertex_location, g);
 
     typename graph_traits<Graph>::vertex_descriptor a, b, c;
     a = add_vertex(g);
@@ -73,8 +72,7 @@ int main() {
 //    boost::put(graph_note_map, g, "dd");
 ////    std::cout <<"Graph_Name:" << boost::get(graph_note_map, g);
 
-    typedef property_map<Graph,edge_length_t>::type edge_length_map_t;
-    edge_length_map_t edge_length_map = boost::get(edge_length,g);
+    typename property_map<Graph,edge_length_t>::type edge_length_map= boost::get(edge_length,g);
 
     typename graph_traits<Graph>::edge_descriptor ed;
     bool inserted_flag;
