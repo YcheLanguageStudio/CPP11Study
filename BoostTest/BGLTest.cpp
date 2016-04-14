@@ -16,6 +16,7 @@ using namespace std;
 enum vertex_location_t {
     vertex_location
 };
+
 enum edge_length_t {
     edge_length
 };
@@ -32,7 +33,7 @@ namespace boost {
 
 // Define vertex properties:  vertex name and location
 typedef property<vertex_name_t, string,
-        property<vertex_location_t, int,property<vertex_index_t, int>>>
+        property<vertex_location_t, array<int, 2>, property<vertex_index_t, int>>>
         VertexProperties;
 
 // Define edge properties:  length
@@ -46,7 +47,7 @@ typedef property<graph_name_t, string,
 // Define a graph type
 typedef adjacency_list
         <
-                vecS,       // edge container type
+                setS,       // edge container type
                 vecS,       // vertex container type
                 undirectedS,
                 VertexProperties,
@@ -58,22 +59,26 @@ int main() {
     Graph g;
 
     typename property_map<Graph, vertex_location_t>::type vertex_location_map = boost::get(vertex_location, g);
-    typename property_map<Graph, vertex_index_t>::type vertex_index_map = boost::get(vertex_index,g);
+    typename property_map<Graph, vertex_index_t>::type vertex_index_map = boost::get(vertex_index, g);
 
     typename graph_traits<Graph>::vertex_descriptor a, b, c;
     a = add_vertex(g);
     b = add_vertex(g);
     c = add_vertex(g);
-    typename graph_traits<Graph>::vertex_descriptor  d;
-    d=a;
-    vertex_location_map[d] =111;
-    cout << "vertex_location a:"<<vertex_location_map[a] << endl;
-    vertex_location_map[b] = 2;
-    vertex_location_map[c] = 3;
+//    typename graph_traits<Graph>::vertex_descriptor  d;
+//    d=a;
 
-    cout << "a:"<<vertex_index_map[a] << endl;
-    cout << "b:"<<vertex_index_map[b] << endl;
-    cout << "c:"<<vertex_index_map[c] << endl;
+
+//    vertex_location_map[d] =111;
+//    cout << "vertex_location a:"<<vertex_location_map[a] << endl;
+    vertex_location_map[b][0] = 1;
+    vertex_location_map[b][1] = 1;
+    vertex_location_map[c][0] = 3;
+    vertex_location_map[c][1] = 3;
+
+    cout << "a:" << vertex_index_map[a] << endl;
+    cout << "b:" << vertex_index_map[b] << endl;
+    cout << "c:" << vertex_index_map[c] << endl;
 //    typedef property_map<Graph,graph_name_t>::type graph_note_map_t;
 //    graph_note_map_t graph_note_map = boost::get(graph_notes, g);
 //    boost::put(graph_note_map, g, "dd");
@@ -92,12 +97,16 @@ int main() {
     boost::put(edge_length_map, ed, 1.4);
 
     for (auto vp = vertices(g); vp.first != vp.second; ++vp.first) {
-        std::cout << "vertex_location_internal_property:" << vertex_location_map[*vp.first] << std::endl;
+        std::cout << "vertex_location_internal_property:" << vertex_location_map[*vp.first][0] << "," <<
+        vertex_location_map[*vp.first][1] << std::endl;
     }
 
     for (auto ep = edges(g); ep.first != ep.second; ++ep.first) {
         std::cout << "dege_length:" << boost::get(edge_length_map, *ep.first) << std::endl;
     }
+
+
+    getchar();
 }
 
 
