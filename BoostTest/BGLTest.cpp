@@ -55,6 +55,9 @@ typedef adjacency_list
                 GraphProperties
         > Graph;
 
+
+typedef adjacency_list<setS,vecS,undirectedS,no_property,EdgeProperties> GraphWithEdgeProperty;
+
 int main() {
     Graph g;
 
@@ -105,7 +108,17 @@ int main() {
         std::cout << "dege_length:" << boost::get(edge_length_map, *ep.first) << std::endl;
     }
 
+    typename graph_traits<GraphWithEdgeProperty>::vertex_descriptor aa, bb, cc;
+    GraphWithEdgeProperty graph;
+    aa = add_vertex(graph);
+    bb = add_vertex(graph);
+    cc = add_vertex(graph);
+     property_map<GraphWithEdgeProperty, edge_length_t>::type edge_length_map2 = boost::get(edge_length, graph);
 
+    typename graph_traits<GraphWithEdgeProperty>::edge_descriptor ed2;
+    tie(ed2, inserted_flag) = add_edge(a, b, g);
+    put(edge_length_map,ed2,1.4);
+    cout << get(edge_length_map2,ed2);
     getchar();
 }
 
