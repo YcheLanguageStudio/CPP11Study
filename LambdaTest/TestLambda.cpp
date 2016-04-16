@@ -3,6 +3,7 @@
 //
 #include "lambda.h"
 #include <algorithm>
+#include  <memory>
 
 using namespace std;
 using namespace yche;
@@ -33,6 +34,10 @@ void testFunctionalWithLambda() {
 //    cout << endl;
 //}
 
+struct test{
+    test(int shit) : shit(shit) { }
+    int shit;
+};
 int main() {
     testFunctionalWithLambda();
     vector<pair<int, int>> my_vec;
@@ -46,6 +51,17 @@ int main() {
     for (auto &my_pair:my_vec) {
         cout << my_pair.first << "," << my_pair.second << "\t" << (my_pair.first + my_pair.second * 2) << endl;
     }
+
+    vector<unique_ptr<test>> ptr_vec;
+    ptr_vec.push_back(std::move(make_unique<test>(1)));
+    ptr_vec.push_back(std::move(make_unique<test>(2)));
+    ptr_vec.push_back(std::move(make_unique<test>(4)));
+    sort(ptr_vec.begin(), ptr_vec.end(), [](auto &&a, auto &&b) -> bool {
+        return a->shit > b->shit;
+    });
+    for(auto &&my_ptr:ptr_vec){
+        cout <<my_ptr->shit <<endl;
+}
 //    testTemplateWithLambda();
     getchar();
 }

@@ -26,3 +26,5 @@ add_executable(SmartPtrtest BoostTest/SmartPtrtest.cpp)
 
 #Test
 add_executable(JustTest JustTest/JustTest.cpp)
+
+add_executable(ReferenceTest ReferenceTest/RReferencetest.cpp)
