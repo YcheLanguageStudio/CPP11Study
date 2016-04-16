@@ -2,6 +2,7 @@
 // Created by cheyulin on 1/6/16.
 //
 #include "lambda.h"
+#include <algorithm>
 
 using namespace std;
 using namespace yche;
@@ -34,5 +35,17 @@ void testFunctionalWithLambda() {
 
 int main() {
     testFunctionalWithLambda();
+    vector<pair<int, int>> my_vec;
+    my_vec.push_back(make_pair(1, 4));
+    my_vec.push_back(make_pair(2, 3));
+    my_vec.push_back(make_pair(5, 2));
+    sort(my_vec.begin(), my_vec.end(), [](auto &a, auto &b) -> bool {
+        return a.first + 2 * a.second < b.first + 2 * b.second;
+    });
+
+    for (auto &my_pair:my_vec) {
+        cout << my_pair.first << "," << my_pair.second << "\t" << (my_pair.first + my_pair.second * 2) << endl;
+    }
 //    testTemplateWithLambda();
+    getchar();
 }

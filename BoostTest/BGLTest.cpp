@@ -117,7 +117,8 @@ int main() {
 
     typename graph_traits<GraphWithEdgeProperty>::edge_descriptor ed2;
     tie(ed2, inserted_flag) = add_edge(a, b, g);
-    put(edge_length_map,ed2,1.4);
+    edge_length_map[ed2]=1.5;
+//    put(edge_length_map,ed2,1.4);
     cout << get(edge_length_map2,ed2);
     getchar();
 }
