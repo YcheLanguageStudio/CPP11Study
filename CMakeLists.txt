@@ -10,6 +10,7 @@ add_executable(CPP11FeaturesStudy PrimerTest/Test.cpp PrimerTest/Test.h )
 
 #LambdaTest
 add_executable(LambdaTest LambdaTest/TestLambda.cpp LambdaTest/lambda.h)
+add_executable(CpatureTest LambdaTest/TestCapture.cpp)
 
 #BoostTest
 add_executable(CPP11FeaturesStudy2 BoostTest/BoostTest.cpp)

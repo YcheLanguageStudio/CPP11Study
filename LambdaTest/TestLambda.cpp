@@ -4,6 +4,7 @@
 #include "lambda.h"
 #include <algorithm>
 #include  <memory>
+#include <set>
 
 using namespace std;
 using namespace yche;
@@ -34,10 +35,24 @@ void testFunctionalWithLambda() {
 //    cout << endl;
 //}
 
-struct test{
+struct complex_struct {
+    complex_struct(int integer) : integer(integer) { }
+
+    int integer;
+    double w1;
+    double w2;
+
+    bool operator==(const complex_struct &right_struct) {
+        return this->integer == right_struct.integer;
+    }
+};
+
+struct test {
     test(int shit) : shit(shit) { }
+
     int shit;
 };
+
 int main() {
     testFunctionalWithLambda();
     vector<pair<int, int>> my_vec;
@@ -59,9 +74,31 @@ int main() {
     sort(ptr_vec.begin(), ptr_vec.end(), [](auto &&a, auto &&b) -> bool {
         return a->shit > b->shit;
     });
-    for(auto &&my_ptr:ptr_vec){
-        cout <<my_ptr->shit <<endl;
-}
+    for (auto &&my_ptr:ptr_vec) {
+        cout << my_ptr->shit << endl;
+    }
 //    testTemplateWithLambda();
+    cout << endl << endl;
+    auto comp = [](auto &a, auto &b) -> bool { return a.integer < b.integer; };
+    set<complex_struct, decltype(comp)> complex_set(comp);
+    complex_struct complex1(1);
+    complex_struct complex2(3);
+    complex_struct complex3(2);
+    complex3.w1 = 1;
+    complex3.w2 = 2;
+    complex_set.insert(complex1);
+    complex_set.insert(complex2);
+    complex_set.insert(complex3);
+
+    complex_struct complex(2);
+    if (complex_set.find(complex) != complex_set.end()) {
+        auto iter = complex_set.find(complex);
+        cout << iter->w1 << "," << iter->w2 << endl;
+    }
+
+    for (auto iter = complex_set.begin(); iter != complex_set.end(); ++iter) {
+        cout << (*iter).integer;
+    }
+
     getchar();
 }
