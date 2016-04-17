@@ -99,6 +99,7 @@ int main() {
     tie(ed, inserted_flag) = add_edge(b, c, g);
     boost::put(edge_length_map, ed, 1.4);
 
+    cout << "degree of a:" <<degree(a,g)<<endl;
     for (auto vp = vertices(g); vp.first != vp.second; ++vp.first) {
         std::cout << "vertex_location_internal_property:" << vertex_location_map[*vp.first][0] << "," <<
         vertex_location_map[*vp.first][1] << std::endl;
@@ -119,6 +120,8 @@ int main() {
     tie(ed2, inserted_flag) = add_edge(a, b, g);
     edge_length_map[ed2]=1.5;
 //    put(edge_length_map,ed2,1.4);
+
+
     cout << get(edge_length_map2,ed2);
     getchar();
 }
