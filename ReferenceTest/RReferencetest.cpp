@@ -26,6 +26,48 @@ void callfunction2(set<int> set_r_val) {
     cout << endl;
 }
 
+class TestClass {
+
+public:
+    int hello;
+
+    TestClass(int hello) : hello(hello) {
+        cout << "Default Constructor" << endl;
+    }
+
+    TestClass(const TestClass &test_class) {
+        this->hello = test_class.hello;
+        cout << "Copy Constructor" << endl;
+    }
+
+    TestClass(TestClass &&test_class) {
+        this->hello = test_class.hello;
+
+        cout << "Move Constructor" << endl;
+    }
+
+    TestClass operator=(const TestClass &test_class) {
+        cout << "Copy Assignment" << endl;
+    }
+
+    TestClass operator=(TestClass &&test_class) {
+        cout << "Move Assignment" << endl;
+    }
+};
+
+void CallFunctionWithTest(TestClass tmp_test_class) {
+
+}
+
+TestClass RetRVal() {
+    TestClass tmp_test_class(4);
+    return std::move(tmp_test_class);
+}
+
+TestClass RetLVal() {
+    TestClass tmp_test_class(5);
+    return tmp_test_class;
+}
 
 int main() {
     set<int> first_set;
@@ -44,7 +86,37 @@ int main() {
 
     callfunction2(std::move(second_set));
     cout << second_set.size() << endl;
-    getchar();
 
+    cout << endl << endl;
+    TestClass my_class_first(1);
+    //Call Constructor
+    auto my_class_second = std::move(my_class_first);
+    //Call Constructor
+    auto my_class_third = my_class_second;
+    //Call Assignment
+    my_class_first = my_class_third;
+    //Call Assignment
+    my_class_first = std::move(my_class_third);
+
+    cout << endl;
+    //Call Constructor
+    CallFunctionWithTest(my_class_first);
+    CallFunctionWithTest(std::move(my_class_first));
+
+    cout << endl << "Ret Val Test:" << endl;
+    //Ret Val Test
+    auto my_fourth_class = RetRVal();
+    cout << my_fourth_class.hello << endl;
+    auto my_fifth_class = RetLVal();
+
+    //compiler optimization???
+    cout << my_fifth_class.hello << endl;
+
+
+    cout << "hello"<<endl;
+    //Only reference Without Any Assignment or Constructor
+    auto&& r_reference_class =std::move(my_fourth_class) ;
+    auto & l_reference_class = my_fourth_class;
+    getchar();
 
 }
