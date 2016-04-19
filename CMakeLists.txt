@@ -6,7 +6,7 @@ set(Boost_LIBRARY_DIR /usr/local/lib)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 #CppPrimer Basic Test
-add_executable(CPP11FeaturesStudy PrimerTest/Test.cpp PrimerTest/Test.h )
+add_executable(CPP11FeaturesStudy PrimerTest/Test.cpp PrimerTest/Test.h)
 
 #LambdaTest
 add_executable(LambdaTest LambdaTest/TestLambda.cpp LambdaTest/lambda.h)
@@ -25,7 +25,11 @@ add_executable(TemplateTest TemplateTest/TestTemplates.cpp)
 add_executable(BoostTestBGL BoostTest/BGLTest.cpp)
 add_executable(SmartPtrtest BoostTest/SmartPtrtest.cpp)
 
-#Test
+#JustTest
 add_executable(JustTest JustTest/JustTest.cpp)
 
+#RRefTest
 add_executable(ReferenceTest ReferenceTest/RReferencetest.cpp)
+
+#FileSystemTest
+add_executable(FileTest FileSystemTest/FileSysTest.cpp)
