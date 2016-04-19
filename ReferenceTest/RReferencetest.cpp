@@ -69,6 +69,10 @@ TestClass RetLVal() {
     return tmp_test_class;
 }
 
+void AcceptRVal(unique_ptr<int>&& hello_ptr){
+    *hello_ptr=3;
+}
+
 int main() {
     set<int> first_set;
     first_set.insert(1);
@@ -113,10 +117,52 @@ int main() {
     cout << my_fifth_class.hello << endl;
 
 
-    cout << "hello"<<endl;
+    cout << "hello" << endl;
     //Only reference Without Any Assignment or Constructor
-    auto&& r_reference_class =std::move(my_fourth_class) ;
-    auto & l_reference_class = my_fourth_class;
+    auto &&r_reference_class = std::move(my_fourth_class);
+    auto &l_reference_class = my_fourth_class;
+
+    cout << endl << endl;
+    unique_ptr<int> first_int_ptr = make_unique<int>(1);
+    auto && r_ref_first_int_ptr = std::move(first_int_ptr);
+    unique_ptr<int> second_int_ptr = make_unique<int>(2);
+    r_ref_first_int_ptr = std::move(second_int_ptr);
+    cout << *first_int_ptr<<endl;
+
+
+    cout << endl<<endl;
+    unique_ptr<int> third_int_ptr = make_unique<int>(111);
+    auto && r_ref= std::move(third_int_ptr);
+    AcceptRVal(std::move(r_ref));
+    cout << "third int:"<<*third_int_ptr<<endl;
     getchar();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -42,9 +42,9 @@ struct complex_struct {
     double w1;
     double w2;
 
-    bool operator==(const complex_struct &right_struct) {
-        return this->integer == right_struct.integer;
-    }
+//    bool operator==(const complex_struct &right_struct) {
+//        return this->integer == right_struct.integer;
+//    }
 };
 
 struct test {
@@ -79,25 +79,26 @@ int main() {
     }
 //    testTemplateWithLambda();
     cout << endl << endl;
-    auto comp = [](auto &a, auto &b) -> bool { return a.integer < b.integer; };
-    set<complex_struct, decltype(comp)> complex_set(comp);
-    complex_struct complex1(1);
-    complex_struct complex2(3);
-    complex_struct complex3(2);
-    complex3.w1 = 1;
-    complex3.w2 = 2;
-    complex_set.insert(complex1);
-    complex_set.insert(complex2);
-    complex_set.insert(complex3);
+    auto comp = [](auto &&a, auto &&b) -> bool { return a->integer < b->integer; };
+    set<unique_ptr<complex_struct>, decltype(comp)> complex_set(comp);
+    auto complex1 = make_unique<complex_struct>(1);
+    auto complex2 = make_unique<complex_struct>(3);
+    auto complex3 = make_unique<complex_struct>(2);
+    complex3->w1 = 1;
+    complex3->w2 = 2;
+    complex_set.insert(std::move(complex1));
+    complex_set.insert(std::move(complex2));
+    complex_set.insert(std::move(complex3));
 
-    complex_struct complex(2);
-    if (complex_set.find(complex) != complex_set.end()) {
-        auto iter = complex_set.find(complex);
-        cout << iter->w1 << "," << iter->w2 << endl;
+    auto complex = make_unique<complex_struct>(2);
+//    auto && r_ref_complex = move(complex);
+    auto iter_one = complex_set.find(complex);
+    if (iter_one != complex_set.end()) {
+        cout << "!!!" << (*iter_one)->w1 << "," << (*iter_one)->w2 << endl;
     }
 
-    for (auto iter = complex_set.begin(); iter != complex_set.end(); ++iter) {
-        cout << (*iter).integer;
+    for (auto iter = complex_set.begin(); iter_one != complex_set.end(); ++iter_one) {
+        cout << (*iter_one)->integer;
     }
 
     getchar();
