@@ -14,6 +14,7 @@ add_executable(CpatureTest LambdaTest/TestCapture.cpp)
 
 #BoostTest
 add_executable(CPP11FeaturesStudy2 BoostTest/BoostTest.cpp)
+add_executable(BGLFindCliques BoostTest/BGLFindCliquesTest.cpp)
 target_link_libraries(CPP11FeaturesStudy2 /usr/local/lib/libboost_regex.so)
 
 #TemplateTest
