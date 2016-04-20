@@ -39,6 +39,8 @@ int main() {
     Class my_class;
     my_class.hello = 111;
     my_class.Call();
+
+
     getchar();
 }
 

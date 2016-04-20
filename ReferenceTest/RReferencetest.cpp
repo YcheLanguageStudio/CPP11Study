@@ -117,6 +117,10 @@ int main() {
     //Only reference Without Any Assignment or Constructor
     auto&& r_reference_class =std::move(my_fourth_class) ;
     auto & l_reference_class = my_fourth_class;
+
+    unique_ptr<int> integer_ptr = make_unique<int>(22);
+    auto && r_ref_interger_ptr = std::move(integer_ptr);
+    cout <<*r_ref_interger_ptr <<endl;
     getchar();
 
 }

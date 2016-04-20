@@ -36,6 +36,19 @@ struct Class {
     int integer;
 };
 
+struct Class2 {
+    int shit;
+    double w1;
+    double w2;
+
+    Class2(int integer) : shit(integer) { }
+
+    bool operator==(const Class2 &another) {
+        return another.shit == this->shit;
+    }
+
+};
+
 int main() {
 //    unique_ptr<int> u_ptr4;
 //    unique_ptr<int> u_ptr2(new int(2));
@@ -86,10 +99,27 @@ int main() {
     }
 
     sort(my_vec.begin(), my_vec.end(), [](auto &&l_ptr, auto &&r_ptr) { return l_ptr->integer > r_ptr->integer; });
-    for(auto &&ptr:my_vec){
-        cout <<"hehe:"<<ptr->integer<<endl;
+    for (auto &&ptr:my_vec) {
+        cout << "hehe:" << ptr->integer << endl;
+    }
+
+    cout << endl << endl;
+    auto comp2 = [](auto &&left, auto &&right) -> bool { return left->shit > right->shit; };
+    set<unique_ptr<Class2>, decltype(comp2)> class2_set(comp2);
+    class2_set.insert(std::move(make_unique<Class2>(1)));
+    class2_set.insert(std::move(make_unique<Class2>(2)));
+    class2_set.insert(std::move(make_unique<Class2>(3)));
+
+    class2_set.erase(std::move(make_unique<Class2>(2)));
+    for (auto &&ptr:class2_set) {
+        cout << ptr->shit << endl;
+    }
+    if(class2_set.find(std::move(make_unique<Class2>(3)))!= class2_set.end()){
+        cout <<"dfsfdsfdsklgfdsgl"<<endl;
     }
     getchar();
+
+
 }
 
 
