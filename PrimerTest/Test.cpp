@@ -102,7 +102,7 @@ int main(){
 //    // 5 10 15 20 25 30 40 50  0  0
 //    v.resize(it-v.begin());                      // 5 10 15 20 25 30 40 50
 //
-//    std::cout << "The union has " << (v.size()) << " elements:\n";
+//    std::cout << "The union has " << (v.size_()) << " elements:\n";
 //    for (it=v.begin(); it!=v.end(); ++it)
 //        std::cout << ' ' << *it;
 //    std::cout << '\n';
