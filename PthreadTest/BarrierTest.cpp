@@ -14,6 +14,7 @@ using namespace std;
 int thread_count;
 int count;
 pthread_mutex_t mutex;
+pthread_cond_t cond_var;
 sem_t count_sem;
 sem_t barrier_sem;
 
@@ -55,7 +56,6 @@ void RunWithMutex() {
 
     pthread_mutex_destroy(&mutex);
     free(thread_handles);
-    getchar();
 }
 
 void *Thread_work_PV_Operation(void *rank) {
@@ -113,14 +113,72 @@ void RunWithSemaphore() {
     sem_destroy(&barrier_sem);
 
     free(thread_handles);
-    getchar();
 }
 
+void *Thread_work_Condition_Variable(void *rank) {
+    struct timespec begin, end;
+    double elapsed;
+    clock_gettime(CLOCK_MONOTONIC, &begin);
+    sleep((long) rank);
+
+    //.........
+    pthread_mutex_lock(&mutex);
+    count++;
+    if (count == thread_count) {
+        count = 0;
+        pthread_cond_broadcast(&cond_var);
+    }
+    else {
+        while (pthread_cond_wait(&cond_var, &mutex) != 0);
+    }
+    pthread_mutex_unlock(&mutex);
+    //................
+
+    clock_gettime(CLOCK_MONOTONIC, &end);
+    elapsed = end.tv_sec - begin.tv_sec;
+    elapsed += (end.tv_nsec - begin.tv_nsec) / 1000000000.0;
+    pthread_mutex_lock(&mutex);
+    cout << "Thread " << (long) rank << "Elaspsed Time:" << elapsed << endl;
+    pthread_mutex_unlock(&mutex);
+
+}
+
+void RunWithConditionvariable() {
+    long thread;
+    pthread_t *thread_handles;
+
+    /* Get number of threads from command line*/
+    thread_handles = (pthread_t *) malloc(thread_count * sizeof(pthread_t));
+
+    pthread_cond_init(&cond_var, NULL);
+    pthread_mutex_init(&mutex, NULL);
+
+    count = 0;
+    for (thread = 0; thread < thread_count; thread++) {
+        pthread_create(&thread_handles[thread], NULL, Thread_work_Condition_Variable, (void *) thread);
+    }
+
+    for (thread = 0; thread < thread_count; thread++) {
+        pthread_join(thread_handles[thread], NULL);
+    }
+
+
+    pthread_cond_destroy(&cond_var);
+    pthread_mutex_destroy(&mutex);
+    free(thread_handles);
+}
 
 int main(int argc, char *argv[]) {
     thread_count = strtol(argv[1], NULL, 10);
 //    RunWithMutex();
-    RunWithSemaphore();
+    cout << endl << endl;
+//    RunWithSemaphore();
+    cout << endl << endl;
+//    RunWithConditionvariable();
+    cout << endl << endl;
+    RunWithConditionvariable();
+    getchar();
+
     return 0;
 
 }
