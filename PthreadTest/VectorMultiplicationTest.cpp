@@ -25,10 +25,11 @@ void *Pth_mat_vect(void *rank) {
     int my_first_row = (my_rank * local_m);
     int my_last_row = (my_rank + 1) * local_m - 1;
 
-    cout << my_first_row <<"," << my_last_row;
+    cout << my_first_row <<"," << my_last_row<<endl;
     for (i = my_first_row; i <= my_last_row; i++) {
         y[i] = 0;
         for (j = 0; j < n; j++) {
+            cout << "Aij"<<A[i][j]<<","<<"xj"<<x[j]<<endl;
             y[i] += A[i][j] * x[j];
         }
     }
@@ -62,6 +63,8 @@ int main(int argc, char *argv[]) {
     for(auto i=0;i<n;i++){
         cout <<"xi "<<i<<" "<<x[i]<<endl;
     }
+
+    y= new double[m];
     /* Get number of threads from command line*/
     thread_count = strtol(argv[1], NULL, 10);
     cout << "pthread_t size:" << sizeof(pthread_t) << endl;
@@ -76,6 +79,11 @@ int main(int argc, char *argv[]) {
     for (thread = 0; thread < thread_count; thread++) {
         pthread_join(thread_handles[thread], NULL);
     }
+
+    for(auto i=0;i<m;i++){
+        cout << "yi:" << y[i]<<endl;
+    }
+
     free(thread_handles);
     getchar();
     return 0;
