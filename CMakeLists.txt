@@ -40,3 +40,5 @@ find_package(Threads)
 #PthreadTest
 add_executable(PthreadTest PthreadTest/PthreadTest.cpp)
 target_link_libraries(PthreadTest ${CMAKE_THREAD_LIBS_INIT})
+add_executable(VectorMulTest PthreadTest/VectorMultiplicationTest.cpp)
+target_link_libraries(VectorMulTest)

@@ -31,17 +31,16 @@ int main(int argc, char *argv[]) {
 
     for (thread = 0; thread < thread_count; thread++) {
         pthread_join(thread_handles[thread], NULL);
-
-
     }
     free(thread_handles);
-
+    getchar();
     return 0;
+
 }
 
 
 void *Hello(void *rank) {
     long my_rank = (long) rank;
-    cout << "Hello From Thread" << my_rank << "Of" << thread_count << endl;
+    cout << "Hello From Thread " << my_rank << " Of " << thread_count << endl;
     return NULL;
 }
