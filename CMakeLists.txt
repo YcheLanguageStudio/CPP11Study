@@ -35,10 +35,11 @@ add_executable(ReferenceTest ReferenceTest/RReferencetest.cpp)
 #FileSystemTest
 add_executable(FileTest FileSystemTest/FileSysTest.cpp)
 
-
-find_package(Threads)
 #PthreadTest
+find_package(Threads)
 add_executable(PthreadTest PthreadTest/PthreadTest.cpp)
 target_link_libraries(PthreadTest ${CMAKE_THREAD_LIBS_INIT})
 add_executable(VectorMulTest PthreadTest/VectorMultiplicationTest.cpp)
 target_link_libraries(VectorMulTest ${CMAKE_THREAD_LIBS_INIT})
+add_executable(RaceConditionTest PthreadTest/RaceConditionTest.cpp)
+target_link_libraries(RaceConditionTest ${CMAKE_THREAD_LIBS_INIT})
