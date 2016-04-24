@@ -34,3 +34,9 @@ add_executable(ReferenceTest ReferenceTest/RReferencetest.cpp)
 
 #FileSystemTest
 add_executable(FileTest FileSystemTest/FileSysTest.cpp)
+
+
+find_package(Threads)
+#PthreadTest
+add_executable(PthreadTest PthreadTest/PthreadTest.cpp)
+target_link_libraries(PthreadTest ${CMAKE_THREAD_LIBS_INIT})
