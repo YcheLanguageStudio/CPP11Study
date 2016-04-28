@@ -79,6 +79,15 @@ struct test {
 
 int main() {
 //    test_erase_pushback();
+
+    vector<unique_ptr<int>> vector1;
+    vector<unique_ptr<int>> vector2;
+    for (auto i = 0; i < 10; ++i) {
+        vector1.push_back(make_unique<int>(i));
+    }
+    for (auto iter = vector1.begin() + 2; iter != vector1.begin() + 5; ++iter) {
+        vector2.push_back(std::move(*iter));
+    }
     getchar();
 }
 

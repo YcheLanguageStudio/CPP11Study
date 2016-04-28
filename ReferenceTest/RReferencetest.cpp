@@ -73,7 +73,7 @@ void AcceptRVal(unique_ptr<int> &&hello_ptr) {
     *hello_ptr = 3;
 }
 
-int main() {
+void SimpleTest() {
     set<int> first_set;
     first_set.insert(1);
     first_set.insert(2);
@@ -136,6 +136,25 @@ int main() {
     auto &&r_ref = std::move(third_int_ptr);
     AcceptRVal(std::move(r_ref));
     cout << "third int:" << *third_int_ptr << endl;
+
+}
+
+void Call_Me(unique_ptr<int> &&hello) {
+    cout << *hello << "!!!" << endl;
+}
+
+int main() {
+    SimpleTest();
+    unique_ptr<int> int_ptr_one = make_unique<int>(1);
+    auto &&r_ref = std::move(int_ptr_one);
+    cout << *r_ref << endl;
+    cout << *int_ptr_one << endl;
+
+    Call_Me(std::move(int_ptr_one));
+    cout << *r_ref << endl;
+    cout << *int_ptr_one << endl;
+
+
     getchar();
 
 
