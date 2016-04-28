@@ -77,6 +77,16 @@ struct test {
 
 };
 
+void test_vector_assign_ptr() {
+    vector<unique_ptr<int>> vector1;
+    for (auto i = 0; i < 5; ++i) {
+        vector1.push_back(std::move(make_unique<int>(i)));
+    }
+    vector<unique_ptr<int>> vector2;
+    vector2.assign(vector1.begin() + 1, vector1.end());
+    cout << vector2.size() << endl;
+}
+
 int main() {
 //    test_erase_pushback();
 
@@ -88,6 +98,23 @@ int main() {
     for (auto iter = vector1.begin() + 2; iter != vector1.begin() + 5; ++iter) {
         vector2.push_back(std::move(*iter));
     }
+    test_vector_assign_ptr();
     getchar();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
