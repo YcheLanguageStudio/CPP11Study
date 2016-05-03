@@ -19,7 +19,7 @@
 - [TemplateTest](./TemplateTest):
     - Study Template Meta-Programming  
     - Have to Implement Template Class In .h files
-- [RandomTEst](./RandomTest):
+- [RandomTest](./RandomTest):
     - Random Generator, Distribution(With OpenMp)
 - [RRefTest](./ReferenceTest):
     - Test R-Reference
