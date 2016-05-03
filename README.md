@@ -18,7 +18,11 @@
     - Semaphore, Producer-Consumer  
 - [TemplateTest](./TemplateTest):
     - Study Template Meta-Programming  
-    - Have to Implement Template Class In .h files  
+    - Have to Implement Template Class In .h files
+- [RandomTEst](./RandomTest):
+    - Random Generator, Distribution(With OpenMp)
 - [RRefTest](./ReferenceTest):
     - Test R-Reference
     - Test Move-Sematics(Move Assignment/Construction)    
+- [ScopeTest](./ScopeTest):
+    - Static, Thread_Local(With OpenMp)

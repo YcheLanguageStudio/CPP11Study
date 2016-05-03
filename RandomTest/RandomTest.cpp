@@ -54,7 +54,7 @@ void TestRandomShuffle() {
 }
 
 int main() {
-//    TestRandomNumGen();
-    TestRandomShuffle();
+    TestRandomNumGen();
+//    TestRandomShuffle();
     getchar();
 }
