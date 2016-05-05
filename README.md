@@ -9,7 +9,9 @@
     - Simple Tiny Test With STL    
 - [LambdaTest](./LambdaTest):
     - Lambda Expression usage    
-    - Capture In Lambda Expression  
+    - Capture In Lambda Expression
+- [OpenMPTest](./OpenMPTest):
+    - Reduce
 - [PrimerTest](./PrimerTest):
     - some examples on c++ Primer 5th    
 - [PthreadTest](./PthreadTest):
