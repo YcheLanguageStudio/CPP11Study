@@ -1,4 +1,8 @@
-# CPP11Study
+# Modern CPP Study
+##Description
+This is a repository for recording my journey of modern CPP study, which covers the basic features of CPP11 and
+try to play with Boost, PThread and OpenMp. The whole project is built via Cmake, which is rather convenient.
+##Category
 - [BoostTest](./BoostTest):
     - BGL(Internal Properties, Run Algorithms Implementing Visitors)  
     - SmartPtr(Mainly With Unique Pointer)  
@@ -26,3 +30,8 @@
     - Test Move-Sematics(Move Assignment/Construction)    
 - [ScopeTest](./ScopeTest):
     - Static, Thread_Local(With OpenMp)
+##Todo List
+- If I have time, I will update the sources codes to make it much more understandable
+ and use assert in boost, rather than utilizing std::cout.
+- Write some brief readme markdown file in each category to highlight the key points of
+certain features.
