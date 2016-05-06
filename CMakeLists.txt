@@ -28,6 +28,16 @@ add_executable(CpatureTest LambdaTest/TestCapture.cpp)
 #CppPrimer Basic Test
 add_executable(CPP11FeaturesStudy PrimerTest/Test.cpp PrimerTest/Test.h)
 
+FIND_PACKAGE(OpenMP REQUIRED)
+if (OPENMP_FOUND)
+    message("OPENMP FOUND")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+endif ()
+#OpenMp Test
+add_executable(ReduceTest OpenMPTest/ReduceTest.cpp)
+
 #TemplateTest
 add_executable(TemplateReview TemplateTest/FirstChapter/FirstTemplateReview.cpp TemplateTest/FirstChapter/FirstTemplateReview.h)
 add_executable(TemplateSecond TemplateTest/SecondChapter/SecondTemplateSpecialization.cpp TemplateTest/SecondChapter/SecondTemplateSpecialization.h)
@@ -53,15 +63,9 @@ add_executable(BarrierTest PthreadTest/BarrierTest.cpp)
 target_link_libraries(BarrierTest ${CMAKE_THREAD_LIBS_INIT})
 
 #ScopeTest
-FIND_PACKAGE( OpenMP REQUIRED)
-if(OPENMP_FOUND)
-    message("OPENMP FOUND")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
-endif()
+
 add_executable(ScopeTest ScopeTest/ScopeTest.cpp)
 
 #RandomTest
-FIND_PACKAGE( OpenMP REQUIRED)
+FIND_PACKAGE(OpenMP REQUIRED)
 add_executable(RandomTest RandomTest/RandomTest.cpp)
