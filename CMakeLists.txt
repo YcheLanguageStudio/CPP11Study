@@ -64,7 +64,8 @@ add_executable(SemaPhoreTest PthreadTest/SemephoreTest.cpp)
 target_link_libraries(SemaPhoreTest ${CMAKE_THREAD_LIBS_INIT})
 add_executable(BarrierTest PthreadTest/BarrierTest.cpp)
 target_link_libraries(BarrierTest ${CMAKE_THREAD_LIBS_INIT})
-add_executable(CPP11CVTest PthreadTest/CPP11ConditionVaraibleTest.cpp)
+add_executable(CPP11CVTest PthreadTest/CPP11/CPP11ConditionVaraibleTest.cpp)
+add_executable(CPP11THreadJOin PthreadTest/CPP11/CPP11ThreadJoinTest.cpp)
 
 #ScopeTest
 
