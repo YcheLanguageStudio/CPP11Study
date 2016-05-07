@@ -10,6 +10,9 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
     - Regex    
 - [FileSystemTest](./FileSystemTest):
     - FileSystem   
+- [FunctionalTest](./FunctionalTest):    
+    - Bind
+    - Function
 - [JustTest](./JustTest):
     - Simple Tiny Test With STL    
 - [LambdaTest](./LambdaTest):

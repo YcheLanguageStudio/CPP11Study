@@ -18,6 +18,9 @@ add_executable(SmartPtrtest BoostTest/SmartPtrtest.cpp)
 #FileSystemTest
 add_executable(FileTest FileSystemTest/FileSysTest.cpp)
 
+#FunctionalTest
+add_executable(BindTest FunctionalTest/BindTest.cpp)
+
 #JustTest
 add_executable(JustTest JustTest/JustTest.cpp)
 
@@ -61,6 +64,7 @@ add_executable(SemaPhoreTest PthreadTest/SemephoreTest.cpp)
 target_link_libraries(SemaPhoreTest ${CMAKE_THREAD_LIBS_INIT})
 add_executable(BarrierTest PthreadTest/BarrierTest.cpp)
 target_link_libraries(BarrierTest ${CMAKE_THREAD_LIBS_INIT})
+add_executable(CPP11CVTest PthreadTest/CPP11ConditionVaraibleTest.cpp)
 
 #ScopeTest
 
