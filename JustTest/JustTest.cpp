@@ -6,6 +6,7 @@
 #include <map>
 #include <queue>
 #include <bits/unique_ptr.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -100,6 +101,25 @@ void TestRvalAndErase() {
     cout << ptr_vec1.size() << endl;
     ptr_vec1.erase(ptr_vec1.end());
     cout << ptr_vec1.size() << endl;
+
+    for (auto i = 0; i < 5; ++i)
+        ptr_vec1.push_back(make_unique<int>(1));
+    ptr_vec1.resize(0);
+    cout << ptr_vec1.size();
+}
+
+unique_ptr<int> TestRVal(unique_ptr<int> left, unique_ptr<int> right) {
+    return std::move(make_unique<int>(*left + *right));
+}
+
+void TestFindMax() {
+    vector<unique_ptr<int>> ptr_vec1;
+    for (auto i = 0; i < 5; ++i)
+        ptr_vec1.push_back(make_unique<int>(i));
+    auto iter = max_element(ptr_vec1.begin(), ptr_vec1.end(), [](auto &&left, auto &&right) -> bool {
+        return *left < *right;
+    });
+    cout << *(*iter) << endl;
 }
 
 int main() {
@@ -114,7 +134,10 @@ int main() {
 //        vector2.push_back(std::move(*iter));
 //    }
 //    test_vector_assign_ptr();
-    TestRvalAndErase();
+//    TestRvalAndErase();
+    unique_ptr<int> sum = TestRVal(std::move(make_unique<int>(1)), std::move(make_unique<int>(2)));
+//    cout << *sum;
+    TestFindMax();
     getchar();
 }
 

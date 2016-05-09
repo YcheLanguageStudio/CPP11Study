@@ -20,6 +20,7 @@ add_executable(FileTest FileSystemTest/FileSysTest.cpp)
 
 #FunctionalTest
 add_executable(BindTest FunctionalTest/BindTest.cpp)
+add_executable(FunctionalTest FunctionalTest/FunctionTest.cpp)
 
 #JustTest
 add_executable(JustTest JustTest/JustTest.cpp)
