@@ -4,6 +4,9 @@
 
 #include <functional>
 #include <iostream>
+#include <vector>
+#include <memory>
+#include <algorithm>
 
 using namespace std;
 
@@ -19,7 +22,35 @@ public:
     }
 };
 
-int main() {
+void TestLambdaPassing() {
     TestClass my_class(1111);
-    my_class.my_function();
+    auto lambda = my_class.my_function;
+    lambda();
+}
+
+void TestSort() {
+    vector<unique_ptr<int>> ptr_vec;
+    for (auto i = 0; i < 5; i++) {
+        ptr_vec.push_back(std::move(make_unique<int>(i)));
+    }
+    //Failure
+//    sort(ptr_vec.begin(), ptr_vec.end(), [](unique_ptr<int> &&left, unique_ptr<int> &&right) {
+//        return *left > *right;
+//    });
+    //Okay
+    sort(ptr_vec.begin(), ptr_vec.end(), [](unique_ptr<int> &left, unique_ptr<int> &right) {
+        return *left > *right;
+    });
+
+    for(auto&& ptr:ptr_vec){
+        cout <<*ptr<<endl;
+    }
+}
+
+int main() {
+    TestLambdaPassing();
+    cout << endl << endl;
+    TestSort();
+    getchar();
+
 }
