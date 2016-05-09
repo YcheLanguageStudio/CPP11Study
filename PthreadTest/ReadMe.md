@@ -26,7 +26,9 @@ In order to avoid race condition, condition variable is always used together wit
     pthread_cond_broadcast()
 ```
 
-- Demonstration : [CVTest](./CVTest.cpp)  Also include thread_cancel operation.
+- Demonstration :
+  - [CVTest](./CVTest.cpp)  Also include thread_cancel operation.
+  - [GlobalQueueTest](./CVTest2GlobalQueue.cpp) Use vector as global queue, mimic reduce operation.
 
 - Explanation for while(pthread_cont_wait)  
   Because multi-threads can receive the signal and awake, but the execution of one thread may change the condition status.

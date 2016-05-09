@@ -67,6 +67,9 @@ target_link_libraries(BarrierTest ${CMAKE_THREAD_LIBS_INIT})
 add_executable(CPP11CVTest PthreadTest/CPP11/CPP11ConditionVaraibleTest.cpp)
 add_executable(CPP11THreadJOin PthreadTest/CPP11/CPP11ThreadJoinTest.cpp)
 add_executable(CVTest PthreadTest/CVTest.cpp)
+add_executable(CVTest2 PthreadTest/CVTest2GlobalQueue.cpp)
+target_link_libraries(CVTest2 ${CMAKE_THREAD_LIBS_INIT})
+
 #ScopeTest
 
 add_executable(ScopeTest ScopeTest/ScopeTest.cpp)
