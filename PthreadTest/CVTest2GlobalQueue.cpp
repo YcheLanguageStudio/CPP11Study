@@ -20,15 +20,22 @@ bool is_end = false;
 
 void *ThreadFunction(void *thread_label) {
     long thread_id = (long) thread_label;
-    pthread_mutex_lock(&mutex);
+
     long local_result = 1;
     while (!is_end) {
+        pthread_mutex_lock(&mutex);
         global_vec.push_back(local_result);
         if (global_vec.size() >= 2) {
-            local_result = 0;
+            vector<int> local_vec;
             for (auto i = 0; i < 2; i++) {
-                local_result += global_vec.back();
+                local_vec.push_back(global_vec.back());
                 global_vec.erase(global_vec.end() - 1);
+            }
+            pthread_mutex_unlock(&mutex);
+            //Do the computation After release the lock
+            local_result = 0;
+            for (auto integer:local_vec) {
+                local_result += integer;
             }
         }
         else {
@@ -40,10 +47,13 @@ void *ThreadFunction(void *thread_label) {
                 idle_count++;
                 while (pthread_cond_wait(&cond_var, &mutex) != 0);
             }
+            pthread_mutex_unlock(&mutex);
+
         }
     }
+#pragma omp critical
     cout << "Thread " << thread_id << " ready to exit" << endl;
-    pthread_mutex_unlock(&mutex);
+
     return NULL;
 }
 
