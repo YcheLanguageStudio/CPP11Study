@@ -77,28 +77,44 @@ struct test {
 
 };
 
-void test_vector_assign_ptr() {
-    vector<unique_ptr<int>> vector1;
-    for (auto i = 0; i < 5; ++i) {
-        vector1.push_back(std::move(make_unique<int>(i)));
-    }
-    vector<unique_ptr<int>> vector2;
-    vector2.assign(vector1.begin() + 1, vector1.end());
-    cout << vector2.size() << endl;
+//void test_vector_assign_ptr() {
+//    vector<unique_ptr<int>> vector1;
+//    for (auto i = 0; i < 5; ++i) {
+//        vector1.push_back(std::move(make_unique<int>(i)));
+//    }
+//    vector<unique_ptr<int>> vector2;
+//    vector2.assign(vector1.begin() + 1, vector1.end());
+//    cout << vector2.size() << endl;
+//}
+
+
+void TestRvalAndErase() {
+    vector<unique_ptr<int>> ptr_vec1;
+    vector<unique_ptr<int>> ptr_vec2;
+    for (auto i = 0; i < 5; ++i)
+        ptr_vec1.push_back(make_unique<int>(1));
+
+    cout << ptr_vec1.size() << endl;
+    ptr_vec2.push_back(std::move(ptr_vec1.back()));
+    //ptr_vec2[4] == nullptr
+    cout << ptr_vec1.size() << endl;
+    ptr_vec1.erase(ptr_vec1.end());
+    cout << ptr_vec1.size() << endl;
 }
 
 int main() {
 //    test_erase_pushback();
 
-    vector<unique_ptr<int>> vector1;
-    vector<unique_ptr<int>> vector2;
-    for (auto i = 0; i < 10; ++i) {
-        vector1.push_back(make_unique<int>(i));
-    }
-    for (auto iter = vector1.begin() + 2; iter != vector1.begin() + 5; ++iter) {
-        vector2.push_back(std::move(*iter));
-    }
-    test_vector_assign_ptr();
+//    vector<unique_ptr<int>> vector1;
+//    vector<unique_ptr<int>> vector2;
+//    for (auto i = 0; i < 10; ++i) {
+//        vector1.push_back(make_unique<int>(i));
+//    }
+//    for (auto iter = vector1.begin() + 2; iter != vector1.begin() + 5; ++iter) {
+//        vector2.push_back(std::move(*iter));
+//    }
+//    test_vector_assign_ptr();
+    TestRvalAndErase();
     getchar();
 }
 
