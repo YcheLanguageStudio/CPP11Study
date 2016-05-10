@@ -49,6 +49,7 @@ add_executable(TemplateThird TemplateTest/ThirdChapter/ThirdTemplateStudy.cpp Te
 add_executable(TemplateThirdTrueType TemplateTest/ThirdChapter/ThirdTemplateTrueType.h TemplateTest/ThirdChapter/ThirdTemplateTrueType.cpp)
 add_executable(TemplateTest TemplateTest/TestTemplates.cpp)
 add_executable(TemplateMine TemplateTest/CrazyTemplate.cpp TemplateTest/CrazyTemplate.h TemplateTest/TestTemplates.cpp)
+add_executable(TemplateClassTest TemplateTest/TemplateClassTest.cpp TemplateTest/TemplateClassTest.h)
 
 #RRefTest
 add_executable(ReferenceTest ReferenceTest/RReferencetest.cpp)
