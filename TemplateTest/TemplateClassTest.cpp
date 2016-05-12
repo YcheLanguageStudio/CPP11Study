@@ -10,5 +10,7 @@ int main(){
     TemplateClassTest<yche::tag2> tag2_class;
     tag1_class.CallPrint();
     tag2_class.CallPrint();
+    PrintHello<int>();
+    PrintHello<float>();
     getchar();
 }

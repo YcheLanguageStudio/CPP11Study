@@ -122,6 +122,10 @@ void TestFindMax() {
     cout << *(*iter) << endl;
 }
 
+void PrintPtrInfo(const unique_ptr<int>& interger_ptr){
+    cout <<*interger_ptr<<endl;
+}
+
 int main() {
 //    test_erase_pushback();
 
@@ -138,6 +142,8 @@ int main() {
     unique_ptr<int> sum = TestRVal(std::move(make_unique<int>(1)), std::move(make_unique<int>(2)));
 //    cout << *sum;
     TestFindMax();
+    unique_ptr<int> hello = make_unique<int>(2222);
+    PrintPtrInfo(hello);
     getchar();
 }
 

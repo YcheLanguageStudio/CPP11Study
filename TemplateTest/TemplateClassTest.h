@@ -38,6 +38,35 @@ namespace yche {
     }
 
 
+    template<typename type>
+    void PrintHello() {
+
+        if (is_same<type, int>::value)
+        {
+            type hello = 1;
+            cout << "int" << hello;
+        }
+        else if(is_same<type, float>::value){
+            type hello = 1;
+            cout <<"float "<<hello;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
