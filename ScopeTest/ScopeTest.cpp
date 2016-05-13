@@ -15,6 +15,20 @@ public:
     }
 };
 
+void TestCallWithStatic(int &integer) {
+    integer += 2;
+    cout << integer << "!!!" << endl;
+}
+
+void TestStatic() {
+    static int integer = 111;
+    TestCallWithStatic(integer);
+
+    integer++;
+    cout << integer << endl;
+}
+
+
 int main() {
     Test test1;
 #pragma omp parallel for
@@ -24,8 +38,13 @@ int main() {
     Test test2;
 
 #pragma omp parallel for
-    for(auto j=0;j<5;j++){
+    for (auto j = 0; j < 5; j++) {
         test2.Print();
     }
+
+
+    for (auto i = 0; i < 5; i++)
+        TestStatic();
+
     getchar();
 }
