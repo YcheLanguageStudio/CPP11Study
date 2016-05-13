@@ -122,8 +122,12 @@ void TestFindMax() {
     cout << *(*iter) << endl;
 }
 
-void PrintPtrInfo(const unique_ptr<int>& interger_ptr){
-    cout <<*interger_ptr<<endl;
+void PrintPtrInfo(const unique_ptr<int> &interger_ptr) {
+    cout << *interger_ptr << endl;
+}
+
+void PrintAutoInput(auto &&input) {
+    cout << input << endl;
 }
 
 int main() {
@@ -144,7 +148,14 @@ int main() {
     TestFindMax();
     unique_ptr<int> hello = make_unique<int>(2222);
     PrintPtrInfo(hello);
+    int integer = 333;
+    string my_str = "haha";
+    PrintAutoInput(integer);
+    PrintAutoInput(my_str);
+    unique_ptr<int> integer_ptr = make_unique<int>(444);
+    PrintAutoInput(*integer_ptr);
     getchar();
+
 }
 
 
