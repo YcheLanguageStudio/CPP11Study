@@ -64,7 +64,7 @@ add_executable(RaceConditionTest PthreadTest/RaceConditionTest.cpp)
 target_link_libraries(RaceConditionTest ${CMAKE_THREAD_LIBS_INIT})
 add_executable(SemaPhoreTest PthreadTest/SemephoreTest.cpp)
 target_link_libraries(SemaPhoreTest ${CMAKE_THREAD_LIBS_INIT})
-add_executable(BarrierTest PthreadTest/BarrierTest.cpp)
+add_executable(BarrierTest PthreadTest/BarrierTest.cpp STLTest/ExtHashMap.cpp)
 target_link_libraries(BarrierTest ${CMAKE_THREAD_LIBS_INIT})
 add_executable(CPP11CVTest PthreadTest/CPP11/CPP11ConditionVaraibleTest.cpp)
 add_executable(CPP11THreadJOin PthreadTest/CPP11/CPP11ThreadJoinTest.cpp)
@@ -75,6 +75,9 @@ target_link_libraries(CVTest2 ${CMAKE_THREAD_LIBS_INIT})
 #ScopeTest
 
 add_executable(ScopeTest ScopeTest/ScopeTest.cpp)
+
+#STLTest
+add_subdirectory(STLTest)
 
 #RandomTest
 FIND_PACKAGE(OpenMP REQUIRED)
