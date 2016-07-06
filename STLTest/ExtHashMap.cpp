@@ -4,6 +4,7 @@
 
 #include <ext/hash_map>
 #include <iostream>
+#include <unordered_map>
 
 #define HASH_SPACE __gnu_cxx
 
