@@ -1,0 +1,4 @@
+add_executable(ExtHashMap ContainerStudy/ExtHashMap.cpp)
+add_executable(STLStudy ContainerStudy/STLTest.cpp)
+add_executable(SmartPtrtest PtrReferenceStudy/SmartPtrtest.cpp)
+add_executable(ReferenceTest PtrReferenceStudy/RReferencetest.cpp)
