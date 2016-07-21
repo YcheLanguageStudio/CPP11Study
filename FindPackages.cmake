@@ -1,7 +1,7 @@
-find_package(Boost 1.58.0 REQUIRED)
+find_package(Boost REQUIRED COMPONENTS regex)
 include_directories(${Boost_INCLUDE_DIRS})
 
-FIND_PACKAGE(OpenMP REQUIRED)
+FIND_PACKAGE(OpenMP REQUIRED )
 if (OPENMP_FOUND)
     message("OPENMP FOUND")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
