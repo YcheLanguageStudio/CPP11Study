@@ -5,3 +5,4 @@ add_executable(TemplateThirdTrueType ./ThirdChapter/ThirdTemplateTrueType.h ./Th
 add_executable(TemplateTestHello Else/TestTemplates.cpp)
 add_executable(TemplateMine Else/CrazyTemplate.cpp Else/CrazyTemplate.h Else/TestTemplates.cpp)
 add_executable(TemplateClassTest Else/TemplateClassTest.cpp Else/TemplateClassTest.h)
+add_executable(TemplateInline TemplateInline.cpp)

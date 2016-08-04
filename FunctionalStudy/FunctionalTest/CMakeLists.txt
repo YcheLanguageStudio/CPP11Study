@@ -1,3 +1,5 @@
 #FunctionalTest
 add_executable(BindTest BindTest.cpp)
 add_executable(FunctionalTest FunctionTest.cpp)
+add_executable(FunctionStudy FunctionStudy.cpp)
+add_executable(FunctionStudy2 FunctionStudy2.cpp)
