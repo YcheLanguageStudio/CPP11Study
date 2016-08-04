@@ -10,7 +10,8 @@ using namespace std;
 struct MyClass {
     void PrintHello() {
         //function_object() is ret_function, then we call ret_function()
-        cout << "Ret:" << function_object()(1) << endl;
+        cout << "Ret:" << function_object()(111) << endl;
+        cout << "Ret:" << function_object0(2.0)(222)<<endl;
         //Directly call function_object2
         function_object2();
         function_object3();
@@ -23,6 +24,16 @@ struct MyClass {
         ret_function = [](int integer) -> int {
             cout << "Hello World:" << integer << endl;
             return -1;
+        };
+        return ret_function;
+    }
+
+    function<int(int)> function_object0(float my_float) {
+        cout << "function_object0, my float:" << my_float << endl;
+        function<int(int)> ret_function;
+        ret_function = [](int integer) -> int {
+            cout << "Hello World:" << integer << endl;
+            return -2;
         };
         return ret_function;
     }
