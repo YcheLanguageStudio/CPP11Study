@@ -1,0 +1,4 @@
+add_executable(CPP11CVTest CPP11ConditionVaraibleTest.cpp)
+add_executable(CPP11THreadJOin CPP11ThreadJoinTest.cpp)
+add_executable(CPP11HelloWorld CPP11HelloWorld.cpp)
+target_link_libraries(CPP11HelloWorld ${CMAKE_THREAD_LIBS_INIT})
