@@ -23,3 +23,27 @@
 ###Mutex
 ###Lock-Adapter
 ###Condition-Variable
+- condition_variable_any's class abstract is as follows:   
+```cpp
+enum class cv_status{no_timeout, timeout};
+class condition_variable_any
+{
+    public:
+        void notify_one();
+        void notify_all();
+        
+        void wait(lock_type& lock);
+        void wait(lock_type& lock, predicate_type predicate);
+        
+        cv_status_wait_for(lock_type& lock, const duration& d);
+        cv_status_wait_for(lock_type& lock, const duration& d, predicate_type predicate);
+        cv_status_wait_until(lock_type& lock, const time_point& t);
+        cv_status_wait_until(lock_type& lock, const time_point&t, predicate_type predicate);
+}
+```
+- Usage
+    - In thread, which executes the instruction-flow that requires certain condition met, 
+    wait(lock_type& lock), unlock, i.e, moving the thread_id from mutex_queue into condition_variable_queue
+    - In thread, which checks the condition and arouse the waiting threads, 
+    notify_one(), move one thread_id from the condition_variable_queue to the mutex_queue. notify_all(), move 
+    all thread_ids from the condition_variable_queue to the mutex_queue
