@@ -5,7 +5,7 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
 - You just need to add some configuration on [CmakeList](./CMakeLists.txt).
 
 ##Contents
-- [Parallel Study](./ParallelStudy)
+- Parallel Study
     - [Pthread](./ParallelStudy/PthreadStudy)
         - [Pthread Interfaces](./ParallelStudy/PthreadStudy)
         - [Boost/CPP11 Wrapper](./ParallelStudy/PthreadStudy/CPP11) for that
@@ -20,14 +20,14 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
     - [Container Study](./STLStudy/ContainerStudy)
     - [Ptr Ref Study](./STLStudy/PtrReferenceStudy)
 
-- [Template Study](./TemplateTest):
+- [Template Study](./TemplateStudy):
     - Template Generic/Meta-Programming
 
 - [Functional Study](./FunctionalStudy)
     - [Lambda Expr](./FunctionalStudy/LambdaStudy)
     - [Functional](./FunctionalStudy/FunctionalTest)
 
-- [Others](./CPPOtherStudy)
+- Others
     - [File System](./CPPOtherStudy/FileSystemTest)
     - [Random](./CPPOtherStudy/RandomTest)
     - [Scope](./CPPOtherStudy/ScopeTest)
