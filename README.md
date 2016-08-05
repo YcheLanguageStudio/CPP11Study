@@ -1,16 +1,19 @@
 # Modern CPP Study
 ##Description
-This is a repository for recording my journey of modern CPP study, which covers the basic features of CPP11 and
-tries to play with Boost, PThread and OpenMp. The whole project is built via Cmake, which is rather convenient. You just need to add some configuration on [CmakeList](./CMakeLists.txt).
+- This is a repository for recording my journey of modern CPP study, which covers the basic features of CPP11 and
+tries to play with Boost, PThread and OpenMp. The whole project is built via Cmake, which is rather convenient.     
+- You just need to add some configuration on [CmakeList](./CMakeLists.txt).
 
-##Category
+##Contents
 - [Parallel Study](./ParallelStudy)
     - [Pthread](./ParallelStudy/PthreadStudy)
+        - [Pthread Interfaces](./ParallelStudy/PthreadStudy)
+        - [Boost/CPP11 Wrapper](./ParallelStudy/PthreadStudy/CPP11) for that
     - [OpenMp](./ParallelStudy/OpenMpStudy)
 
-- [Boost Study](./BoostTest):
+- [Boost Study](./BoostStudy):
     - BGL(Internal Properties, Run Algorithms Implementing Visitors)  
-    - SmartPtr(Mainly With Unique Pointer)  
+    - [Range-Algorithms and Range-Meta](./BoostStudy/RangeMeta)
     - Regex
 
 - [STL Study](./STLStudy)
@@ -18,18 +21,14 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
     - [Ptr Ref Study](./STLStudy/PtrReferenceStudy)
 
 - [Template Study](./TemplateTest):
-    - Study Template Meta-Programming
-    - Have to Implement Template Class In .h files
+    - Template Generic/Meta-Programming
 
 - [Functional Study](./FunctionalStudy)
     - [Lambda Expr](./FunctionalStudy/LambdaStudy)
-    - [Functional Bind](./FunctionalStudy/FunctionalTest)
+    - [Functional](./FunctionalStudy/FunctionalTest)
 
 - [Others](./CPPOtherStudy)
     - [File System](./CPPOtherStudy/FileSystemTest)
     - [Random](./CPPOtherStudy/RandomTest)
     - [Scope](./CPPOtherStudy/ScopeTest)
 
-
-##Todo List
-- Update Readme in each category. Refine the codes and remove ambigious illustrations.
