@@ -21,6 +21,34 @@
 - this mechanism requires to use static one_flag object, which is used as the initialization flag
     
 ###Mutex
+####Shared-Mutex
+- share mutex is different from mutex and recursive_mutex, which allows threads have multiple share-ownership and single 
+private ownership, implementing the mechanism of read-write-lock, i.e, multiple read-threads and single write thread
+- class abstract is as follows
+```cpp
+class shared_mutex
+{
+    public:
+        shared_mutex();
+        ~shared_mutex();
+       
+        void lock();
+        bool try_lock();
+        void unlock();
+        bool try_lock_for(const chrono::duration& rel_time);
+        bool try_lock_until(cosnt chrono::time_point& abs_time);
+        
+        //single ownership functions:
+        bool lock_shared();
+        bool try_lock_shared();
+        void unlock_shared();
+        
+        bool try_lock_shared_for(const duration& rel_time);
+        bool try_lock_shared_until(const time_point& abs_time);
+        
+}
+```   
+
 ###Lock-Adapter
 ###Condition-Variable
 - condition_variable_any's class abstract is as follows:   

@@ -1,5 +1,5 @@
  set(Boost_USE_MULTITHREADED ON)
- find_package(Boost REQUIRED COMPONENTS regex thread)
+ find_package(Boost REQUIRED COMPONENTS regex thread chrono)
  include_directories(${Boost_INCLUDE_DIRS})
 
  FIND_PACKAGE(OpenMP REQUIRED)
