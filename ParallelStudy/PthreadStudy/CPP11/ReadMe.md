@@ -65,7 +65,8 @@ public:
 - free functions(not in thread): get_id(), yield(), sleep_for(), sleep_until()
 - thread function could be function/function object/bind/lambda expression, providing operator().
 - usage: sleep_wait, join, detach(after which, thread object not represents for any threading, joinable()==false)
-- thread_guard(RAII specifies the behaviors in destructor of thread), scoped_thread(similar to scoped_ptr)  
+- thread_guard(RAII specifies the behaviors in destructor of thread), scoped_thread(similar to scoped_ptr)    
+
 ####Thread-Interrupt
 - thread library defines 12 types of interrupt points, which are all functions
     - thread::join()
