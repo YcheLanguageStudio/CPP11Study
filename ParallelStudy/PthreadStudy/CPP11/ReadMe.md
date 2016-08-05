@@ -75,3 +75,55 @@ class condition_variable_any
     - In thread, which checks the condition and arouse the waiting threads, 
     notify_one(), move one thread_id from the condition_variable_queue to the mutex_queue. notify_all(), move 
     all thread_ids from the condition_variable_queue to the mutex_queue
+    
+###Future
+####Unique_Feature
+- class abstract:   
+```cpp
+enum class future_status{
+    ready,
+    timeout,
+    deferred
+}
+
+template<typename T>
+class future
+{
+public:
+    T get();
+    
+    void wait() const;
+    future_status wait_for(const duration& rel_time) const;
+    future_status wait_until(const time_pint& abs_time) const;
+    
+    bool valid() const; 
+    bool is_ready() const;
+    bool has_exception() const;
+    bool has_value() const;
+    
+    shared_future share();
+}
+```    
+- future's member function wait() is used for waiting for the asynchronous computation result, blocking wait the 
+ execution of threads until getting the result
+- future's member function get() is used for acquiring the result of future computation, in default, it will invoke 
+wait() to wait for the end of computation
+- function async() is used for generating future objects
+- usage is as follows:   
+```cpp
+async(bind(dummy,10));
+
+auto f = async([]{cout << "hello" << endl});
+f.wait();
+```
+- the above code is equal to the following code:   
+```cpp
+thread(dummy, 10).detach();
+thread t([]{cout << "hello" << endl});
+t.join();
+```
+
+####Shared_Feature
+- unique_feature's result could merely be accessed once, which gives the restriction that it could not be 
+accessed by multiple threads
+- share feature make it possible to be invoked its get() to get the computation result and guarantee thread-safety
