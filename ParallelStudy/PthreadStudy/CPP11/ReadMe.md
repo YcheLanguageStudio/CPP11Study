@@ -16,6 +16,9 @@
     - condition_variable_any::wait()
     - condition_variable_any::wait_for()/wait_until()
     - this_thread::sleep_for()/sleep_until()
+
+####Call-Once
+- this mechanism requires to use static one_flag object, which is used as the initialization flag
     
 ###Mutex
 ###Lock-Adapter
