@@ -1,5 +1,6 @@
 ##CPP11/Boost Thread Wrapper
 ###Atomic
+####Atomic Basic Usage
 - atomic can make the operations of type T atomic, type T has to satisfy either
     - scalar, e.g, c++ built-in algorithm types, enum and pointers
     - trivial copy/move constructor, copy/move assignment constructor and destructor, able to use memcmp to 
@@ -57,7 +58,28 @@ public:
 - atomic most operations are not return l-value, which means it is quite different from non-atomic operations
 - usage: basically use store() and load()
     - actually we are provided with operator overriding, operator=() equals to sotre(), implicit operator T() equals to load()
-    - compare-and-swap
+    - exchange(), atomically exchange two values and reuturn the store value, compare_exchange_weak() and compare_exchange_strong() is 
+    compare-and-swap, i.e, compare expected value, if two are equal, then store the desired value. 
+    - difference between weak and strong is that, compare_exchange_weak is much more fast, but it is possible that it successes but return 
+    false
+    - atomic storage() can make us get the atomic value reference, which could not guarantee the atomic feature
+
+####Instruction Order for Parallel Program
+- compiler and cpu's optimization will have the chance to make instruction out-of-order, which may influence the sequential execution of 
+   the program.
+- actually, c++11 define the parallel memory model for this, including cpu, registers, machine codes, .etc these concepts
+- <boost/memory_order.hpp> define the concetps of memory access order as follows   
+```cpp
+enum memory_order
+{
+    memory_order_relaxed =0 ;
+    memory_order_consume =1 ;
+    memory_order_acquire =2 ;
+    memory_order_release =4 ;
+    memory_order_acq_rel = 6;   //acquire | release
+    memory_order_seq_cst = 14;  // acq_rel | 8
+}
+```
     
 ###Thread
 ####Basics
@@ -108,7 +130,7 @@ class shared_mutex
         
 }
 ```      
-###L#ock-Adapter
+####Lock-Adapter
 
 ###Condition-Variable
 - condition_variable_any's class abstract is as follows:   
