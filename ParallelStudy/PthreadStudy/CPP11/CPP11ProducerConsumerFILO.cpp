@@ -2,12 +2,10 @@
 // Created by cheyulin on 8/5/16.
 //
 
-#include<stack>
-#include <iostream>
-#include <boost/thread/condition_variable.hpp>
-#include <boost/thread/mutex.hpp>
-#include <boost/thread/lock_factories.hpp>
 #include <boost/thread/thread.hpp>
+#include <boost/thread/lock_factories.hpp>
+
+#include<stack>
 
 using namespace boost;
 using namespace std;

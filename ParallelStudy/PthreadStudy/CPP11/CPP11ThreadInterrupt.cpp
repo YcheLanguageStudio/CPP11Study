@@ -3,7 +3,6 @@
 //
 
 #include <boost/thread/thread.hpp>
-#include <iostream>
 
 using namespace boost;
 using namespace std;

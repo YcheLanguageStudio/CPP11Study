@@ -1,12 +1,9 @@
 //
 // Created by cheyulin on 8/6/16.
 //
-
-#include <boost/atomic.hpp>
+#include <boost/thread.hpp>
 #include <boost/utility.hpp>
-#include <iostream>
 
-using namespace std;
 using namespace boost;
 
 void cas_demo() {

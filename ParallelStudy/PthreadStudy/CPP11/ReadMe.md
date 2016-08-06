@@ -1,4 +1,9 @@
 ##CPP11/Boost Thread Wrapper
+###Boost Header
+- include as follows, which includes all the other headers in turn.                      
+```cpp
+#include <boost/thread.hpp>
+```
 ###Atomic
 ####Atomic Basic Usage
 - atomic can make the operations of type T atomic, type T has to satisfy either
@@ -13,7 +18,7 @@ class atomic: public atomics::detail::base_atomic<T
 public:
     atomic() = default;
     explicit atomic(T v);   
-    
+     
     atomic(atomic const&) = delete;
     atomic& operator=(atomic const&) = delete;
     
@@ -208,3 +213,6 @@ t.join();
 - unique_feature's result could merely be accessed once, which gives the restriction that it could not be 
 accessed by multiple threads
 - share feature make it possible to be invoked its get() to get the computation result and guarantee thread-safety
+
+##Reference
+- http://www.boost.org/doc/libs/1_61_0/doc/html/thread.html
