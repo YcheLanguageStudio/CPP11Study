@@ -6,24 +6,24 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
 
 ##Contents
 - Parallel Study
-    - [Pthread](./ParallelStudy/PthreadStudy)
+    - Pthread
         - [Pthread Interfaces](./ParallelStudy/PthreadStudy)
         - [Boost/CPP11 Wrapper](./ParallelStudy/PthreadStudy/CPP11) for that
     - [OpenMp](./ParallelStudy/OpenMpStudy)
 
-- [Boost Study](./BoostStudy):
+- Boost Study
     - BGL(Internal Properties, Run Algorithms Implementing Visitors)  
     - [Range-Algorithms and Range-Meta](./BoostStudy/RangeMeta)
     - Regex
 
-- [STL Study](./STLStudy)
+- STL Study
     - [Container Study](./STLStudy/ContainerStudy)
     - [Ptr Ref Study](./STLStudy/PtrReferenceStudy)
 
 - [Template Study](./TemplateStudy):
     - Template Generic/Meta-Programming
 
-- [Functional Study](./FunctionalStudy)
+- Functional Study
     - [Lambda Expr](./FunctionalStudy/LambdaStudy)
     - [Functional](./FunctionalStudy/FunctionalTest)
 
