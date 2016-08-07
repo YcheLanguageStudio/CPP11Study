@@ -7,9 +7,7 @@ include(FindPackages.cmake)
 
 add_subdirectory(BoostStudy)
 
-add_subdirectory(FunctionalStudy/FunctionalTest)
-
-add_subdirectory(FunctionalStudy/LambdaStudy)
+add_subdirectory(FunctionalStudy)
 
 add_subdirectory(TemplateStudy)
 
