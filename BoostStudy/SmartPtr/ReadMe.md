@@ -36,4 +36,11 @@ public:
   T* detach() const;
   void swap(intrusive_ptr& b);
 ｝
+```   
+- it requires the traits as follows:    
+```cpp
+void intrusive_ptr_add_ref(T* p);
+void intrusive_ptr_release(T* p);
 ```
+
+
