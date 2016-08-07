@@ -2,7 +2,9 @@
 // Created by cheyulin on 8/5/16.
 //
 #include <boost/thread/future.hpp>
+#include <boost/thread/scoped_thread.hpp>
 #include <boost/chrono.hpp>
+
 
 using namespace boost;
 using namespace std;
@@ -40,23 +42,19 @@ void multiple_future_objects_demo() {
     }
 }
 
-//void shared_future_demo() {
-//    auto f5 = async(bind(fab, 5)).share();
-//
-//    auto func = [](decltype(f5) f){
-//        cout << "[" << f.get() << "]";
-//    };
-//    async(func,f5);
-//    async(func,f5);
-//
-//    this_thread::sleep_for(boost::chrono::milliseconds(100));
-//    assert(f5.valid());
-//}
+void shared_future_demo() {
+    auto f5 = async(bind(fab, 5)).share();
+
+    scoped_thread<>([f5]() { cout << f5.get() << endl; });
+    scoped_thread<>([f5]() { cout << f5.get() << endl; });
+    this_thread::sleep_for(boost::chrono::milliseconds(100));
+    assert(f5.valid());
+}
 
 int main() {
     simple_demo();
     cout << endl << endl;
     multiple_future_objects_demo();
     cout << endl << endl;
-//    shared_future_demo();
+    shared_future_demo();
 }
