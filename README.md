@@ -12,9 +12,10 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
     - [OpenMp](./ParallelStudy/OpenMpStudy)
 
 - Boost Study
-    - BGL(Internal Properties, Run Algorithms Implementing Visitors)  
+    - [Smart Pointer, RAII](./BoostStudy/SmartPtr)
     - [Range-Algorithms and Range-Meta](./BoostStudy/RangeMeta)
-    - Regex
+    - [Graph Library](./BoostStudy/GraphLibrary)
+    - [Regex](./BoostStudy/Regex)
 
 - STL Study
     - [Container Study](./STLStudy/ContainerStudy)
