@@ -42,4 +42,9 @@ private:
 ```cpp
 reference_wrapper<T> ref(T& t);
 reference_wrapper<T const> cref(T const& t);
+```    
+- meta-function, providing
+```cpp
+is_reference_wrapper<T>::value      // judge whether T is a reference_wrapper
+unwrap_reference<T>::type           // judge whether T has been wrapped by reference_wrapper
 ```
