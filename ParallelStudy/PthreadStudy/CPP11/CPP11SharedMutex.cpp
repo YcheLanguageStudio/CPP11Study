@@ -4,8 +4,6 @@
 #include <boost/thread/shared_mutex.hpp>
 #include <boost/chrono.hpp>
 #include <boost/thread.hpp>
-#include <iostream>
-#include <functional>
 
 using namespace std;
 using namespace boost;

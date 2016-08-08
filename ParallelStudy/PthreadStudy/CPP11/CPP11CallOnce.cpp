@@ -1,7 +1,6 @@
 //
 // Created by cheyulin on 8/5/16.
 //
-#include <boost/thread/thread.hpp>
 #include <iostream>
 #include <boost/thread/once.hpp>
 #include <boost/thread/scoped_thread.hpp>

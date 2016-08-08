@@ -1,35 +1,35 @@
 # Modern CPP Study
 ##Description
-This is a repository for recording my journey of modern CPP study, which covers the basic features of CPP11 and
-tries to play with Boost, PThread and OpenMp. The whole project is built via Cmake, which is rather convenient. You just need to add some configuration on [CmakeList](./CMakeLists.txt).
+- This is a repository for recording my journey of modern CPP study, which covers the basic features of CPP11 and
+tries to play with Boost, PThread and OpenMp. The whole project is built via Cmake, which is rather convenient.     
+- You just need to add some configuration on [CmakeList](./CMakeLists.txt).
 
-##Category
-- [Parallel Study](./ParallelStudy)
-    - [Pthread](./ParallelStudy/PthreadStudy)
+##Contents
+- Parallel Study
+    - Pthread
+        - [Pthread Interfaces](./ParallelStudy/PthreadStudy)
+        - [Boost/CPP11 Wrapper](./ParallelStudy/PthreadStudy/CPP11) for that
     - [OpenMp](./ParallelStudy/OpenMpStudy)
 
-- [Boost Study](./BoostTest):
-    - BGL(Internal Properties, Run Algorithms Implementing Visitors)  
-    - SmartPtr(Mainly With Unique Pointer)  
-    - Regex
+- Boost Study
+    - [Smart Pointer, RAII](./BoostStudy/SmartPtr)
+    - [Range-Algorithms and Range-Meta](./BoostStudy/RangeMeta)
+    - [Graph Library](./BoostStudy/GraphLibrary)
+    - [Regex](./BoostStudy/Regex)
 
-- [STL Study](./STLStudy)
+- STL Study
     - [Container Study](./STLStudy/ContainerStudy)
     - [Ptr Ref Study](./STLStudy/PtrReferenceStudy)
 
-- [Template Study](./TemplateTest):
-    - Study Template Meta-Programming
-    - Have to Implement Template Class In .h files
+- [Template Study](./TemplateStudy):
+    - Template Generic/Meta-Programming
 
-- [Functional Study](./FunctionalStudy)
+- Functional Study
     - [Lambda Expr](./FunctionalStudy/LambdaStudy)
-    - [Functional Bind](./FunctionalStudy/FunctionalTest)
+    - [Functional](./FunctionalStudy/FunctionalTest)
 
-- [Others](./CPPOtherStudy)
+- Others
     - [File System](./CPPOtherStudy/FileSystemTest)
     - [Random](./CPPOtherStudy/RandomTest)
     - [Scope](./CPPOtherStudy/ScopeTest)
 
-
-##Todo List
-- Update Readme in each category. Refine the codes and remove ambigious illustrations.
