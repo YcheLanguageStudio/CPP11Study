@@ -25,8 +25,12 @@ tries to play with Boost, PThread and OpenMp. The whole project is built via Cma
     - Template Generic/Meta-Programming
 
 - Functional Study
+    - [Ref](./FunctionalStudy/Ref)
+    - [Bind](./FunctionalStudy/Bind)
+    - [Function](./FunctionalStudy/Function)
+    - [Signal2](./FunctionalStudy/Signal2)
     - [Lambda Expr](./FunctionalStudy/LambdaStudy)
-    - [Functional](./FunctionalStudy/FunctionalTest)
+    - [Other Functional](./FunctionalStudy/FunctionalTest)
 
 - Others
     - [File System](./CPPOtherStudy/FileSystemTest)
