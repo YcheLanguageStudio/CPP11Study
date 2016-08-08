@@ -50,6 +50,8 @@ class shared_mutex
 ```   
 
 ###Lock-Adapter
+
+
 ###Condition-Variable
 - condition_variable_any's class abstract is as follows:   
 ```cpp
@@ -69,12 +71,22 @@ class condition_variable_any
         cv_status_wait_until(lock_type& lock, const time_point&t, predicate_type predicate);
 }
 ```
+- overload function with predicate
+```cpp
+        template<typename lock_type,typename predicate_type>
+        void wait(lock_type& m,predicate_type pred)
+        {
+            while(!pred()) wait(m);
+        }
+```
+
 - Usage
     - In thread, which executes the instruction-flow that requires certain condition met, 
     wait(lock_type& lock), unlock, i.e, moving the thread_id from mutex_queue into condition_variable_queue
     - In thread, which checks the condition and arouse the waiting threads, 
     notify_one(), move one thread_id from the condition_variable_queue to the mutex_queue. notify_all(), move 
     all thread_ids from the condition_variable_queue to the mutex_queue
+    
     
 ###Future
 ####Unique_Feature
@@ -127,3 +139,6 @@ t.join();
 - unique_feature's result could merely be accessed once, which gives the restriction that it could not be 
 accessed by multiple threads
 - share feature make it possible to be invoked its get() to get the computation result and guarantee thread-safety
+
+###Others
+####Promise
