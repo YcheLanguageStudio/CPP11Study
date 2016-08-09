@@ -1,1 +1,2 @@
 add_executable(ClassComposeInitialization ClassComposeInitialization.cpp)
+add_executable(ClassMemberInitialization ClassMemberInitialization.cpp)
