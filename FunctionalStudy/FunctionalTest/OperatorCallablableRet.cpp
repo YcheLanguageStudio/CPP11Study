@@ -13,6 +13,7 @@ struct Hello {
 
     Hello(int integer_) : integer_(integer_) {
         cout << "UDF:" << integer_ << endl;
+        cout << endl;
     }
 
 
@@ -20,20 +21,37 @@ struct Hello {
         cout << "Copy" << endl;
     }
 
+    Hello &operator=(const Hello &hello) {
+        cout << "Copy Assignment" << endl;
+    }
+
+    Hello operator=(Hello &&hello) {
+        cout << "Move Assignment" << endl;
+    }
+
     Hello(Hello &&hello) {
         cout << "Move" << endl;
     }
 };
 
-int main() {
+function<Hello()> RetCopyOfFuncObj() {
     function<Hello()> function_ret_hello = nullptr;
     function_ret_hello = []() -> Hello {
         return Hello(222);
     };
+    return function_ret_hello;
+}
 
-    Hello tmp_hello = (function_ret_hello());
-//    tmp_hello = std::move(Hello(333));
-//    Hello *tmp_hello_ptr = nullptr;
-//    *tmp_hello_ptr = function_ret_hello();
-//    cout << tmp_hello_ptr->integer_ << endl;
+int main() {
+
+    Hello tmp_hello1 = Hello(444);
+
+    Hello tmp_hello = (RetCopyOfFuncObj()());
+    tmp_hello = Hello(333);
+    cout << endl;
+
+    Hello *tmp_hello_ptr;
+//    tmp_hello_ptr = (RetCopyOfFuncObj()());
+//    if (tmp_hello_ptr != nullptr)
+//        cout << tmp_hello_ptr->integer_ << endl;
 }
