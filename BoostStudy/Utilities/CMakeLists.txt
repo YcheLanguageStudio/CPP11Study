@@ -1,0 +1,2 @@
+add_executable(NonCopyable NonCopyable.cpp)
+add_executable(IgnoreUnused IgnoreUnused.cpp)
