@@ -21,4 +21,6 @@ void func2() {
 int main() {
     cout << func(1, 2) << endl;
     func2();
+
+    string str1= nullptr;
 }
