@@ -1,2 +1,3 @@
 add_executable(ClassComposeInitialization ClassComposeInitialization.cpp)
 add_executable(ClassMemberInitialization ClassMemberInitialization.cpp)
+add_executable(InheritenceDestructor InheritenceDestructor.cpp)
