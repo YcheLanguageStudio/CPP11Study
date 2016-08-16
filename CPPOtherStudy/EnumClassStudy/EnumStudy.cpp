@@ -17,6 +17,10 @@ enum class ValueAlignment {
     large = 30000
 };
 
+enum class Hello{
+    hello=1000000
+};
+
 constexpr int extra_alignment = 1;
 constexpr char *extra_split_string = "\n";
 constexpr char *small_file_name = "small.db";
@@ -37,6 +41,7 @@ struct DataSetInfo {
 };
 
 int main() {
+    cout << static_cast<int>(Hello::hello)<<endl;
     cout << static_cast<int>(KeyAlignment::small) << extra_split_string;
     cout << static_cast<int>(ValueAlignment::small) << extra_split_string;
     cout << static_cast<int>(KeyAlignment::medium) << extra_split_string;
