@@ -1,0 +1,2 @@
+add_executable(UnorderedMapSerialization UnorderedMapSerialization.cpp)
+target_link_libraries(UnorderedMapSerialization ${Boost_LIBRARIES})
