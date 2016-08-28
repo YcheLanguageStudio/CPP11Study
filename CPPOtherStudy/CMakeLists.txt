@@ -13,3 +13,5 @@ add_executable(CPPPrimerContent CPPPrimerContent/Test.cpp CPPPrimerContent/Test.
 add_executable(FileTest FileSystemTest/FileSysTest.cpp)
 
 add_subdirectory(OOP)
+
+add_subdirectory(EnumClassStudy)
