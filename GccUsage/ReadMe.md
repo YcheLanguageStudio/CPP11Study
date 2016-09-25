@@ -13,3 +13,4 @@
 - [处理多个源文件-build_mutiple_file_hello_world0.sh](build_mutiple_file_hello_world0.sh)
 - [处理多个源文件-build_multiple_file_hello_world1.sh](build_multiple_file_hello_world1.sh)
 - [创建静态链接库-build_say_hello_with_archive.sh](build_say_hello_with_archive.sh)
+- [创建动态链接库-build_say_hello_with_shared_object.sh](build_say_hello_with_shared_object.sh)
