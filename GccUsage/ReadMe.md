@@ -7,7 +7,7 @@
 [say_hello_func.cpp](say_hello_func.cpp), [say_hello_main.cpp](say_hello_main.cpp)
 
 ##脚本文件
-- [生成可执行文件-给个直观感受-build_hello_world.sh](-build_hello_world.sh)
+- [生成可执行文件-给个直观感受-build_hello_world.sh](build_hello_world.sh)
 - [编译预处理-preprocessing_hello_world.sh](preprocessing_hello_world.sh)
 - [生成汇编文件-generate_asm_hello_world.sh](generate_asm_hello_world.sh)
 - [处理多个源文件-build_mutiple_file_hello_world0.sh](build_mutiple_file_hello_world0.sh)
