@@ -1,9 +1,12 @@
 #Modern CPP Study
 ##Guidance
-- [Gcc Usage Tutorial](GccUsage)
-- [Difference Btw C and Cpp](DifferInCppC)
-- [Notes](Notes)
-- [Cmake](https://cmake.org/)
+- Cpp Dev-Env Configuration, see my chinese post in [工具介绍 – C++工作环境](http://blog.cheyulin.me/?p=33)
+- Cpp Recommended Books, see my chinese post in [推荐书目 – C++学习资料](http://blog.cheyulin.me/?p=318)
+- [Gcc Usage Tutorial](Guidance/GccUsage), see my chinese post in [知识回顾 – C/C++ 编译常识](http://blog.cheyulin.me/?p=270)
+- [Difference Btw C and Cpp](Guidance/DifferInCppC), see my chinese mpost in [知识回顾 – C/C++区别](http://blog.cheyulin.me/?p=238)
+- [Mix Compilation Btw C and Cpp](Guidance/MixCompile)
+- [Notes](Guidance/Notes), including cpp profiling
+- [Cmake](https://cmake.org/), this is a cmake offical site, which has useful information
 
 ##Parallel Lib
 - Pthread
