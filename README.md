@@ -8,6 +8,10 @@
 - [Notes](Guidance/Notes), including cpp profiling
 - [Cmake](https://cmake.org/), this is a cmake offical site, which has useful information
 
+##Tutorial
+- [Cpp Move and Forward Syntax](Tutorial/MoveForwardSyntax), see my chinese post in [特性速览 – C++11右值引用/转移语义/完美转发](http://blog.cheyulin.me/?p=148)
+- [Functional-Style Quick Overview](Tutorial/Functional), about map/filter/reduce, comparing functional-style btw C++ and Python
+
 ##Parallel Lib
 - Pthread
   - [Pthread Interfaces](./ParallelStudy/PthreadStudy)
