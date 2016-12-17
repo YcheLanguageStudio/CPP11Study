@@ -24,7 +24,8 @@ def demo_reduce(int_list, str_list):
     res_str = reduce(lambda left, right: left + ':' + right, str_list, 'Haha')
     print res_str
 
-    print 'If use pythonic style:', ':'.join(['Haha'] + str_list)
+    print 'If use pythonic style, then:'
+    print ':'.join(['Haha'] + str_list)
 
 
 if __name__ == '__main__':
