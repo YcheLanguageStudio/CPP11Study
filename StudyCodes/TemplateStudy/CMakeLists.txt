@@ -1,0 +1,8 @@
+add_executable(TemplateReview FirstChapter/FirstTemplateReview.cpp FirstChapter/FirstTemplateReview.h)
+add_executable(TemplateSecond SecondChapter/SecondTemplateSpecialization.cpp SecondChapter/SecondTemplateSpecialization.h)
+add_executable(TemplateThird ThirdChapter/ThirdTemplateStudy.cpp ThirdChapter/ThirdTemplateStudy.h)
+add_executable(TemplateThirdTrueType ThirdChapter/ThirdTemplateTrueType.h ThirdChapter/ThirdTemplateTrueType.cpp)
+add_executable(TemplateTestHello Else/TestTemplates.cpp)
+add_executable(TemplateMine Else/CrazyTemplate.cpp Else/CrazyTemplate.h Else/TestTemplates.cpp)
+add_executable(TemplateClassTest Else/TemplateClassTest.cpp Else/TemplateClassTest.h)
+add_executable(TemplateInline TemplateInline.cpp)

@@ -5,13 +5,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 include(FindPackages.cmake)
 
-add_subdirectory(BoostStudy)
-add_subdirectory(FunctionalStudy)
-add_subdirectory(TemplateStudy)
-add_subdirectory(ParallelStudy/PthreadStudy)
-add_subdirectory(ParallelStudy/OpenMpStudy)
-add_subdirectory(STLStudy)
-add_subdirectory(CPPOtherStudy)
+add_subdirectory(StudyCodes/BoostStudy)
+add_subdirectory(StudyCodes/FunctionalStudy)
+add_subdirectory(StudyCodes/TemplateStudy)
+add_subdirectory(StudyCodes/ParallelStudy/PthreadStudy)
+add_subdirectory(StudyCodes/ParallelStudy/OpenMpStudy)
+add_subdirectory(StudyCodes/STLStudy)
+add_subdirectory(StudyCodes/OtherStudy)
 
 
 

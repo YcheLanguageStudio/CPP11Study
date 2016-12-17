@@ -11,10 +11,18 @@
 - [Mix Compilation Btw C and Cpp](Guidance/MixCompile), to be updated later
 
 ##Guidance-Notes
-[Cpp Profiling](Guidance/Notes/CppProfiling.md), including cpp profiling notes
+- [Cpp Profiling](Guidance/Notes/CppProfiling.md), including cpp profiling notes
 
 ##Tutorial
 - [Cpp Move and Forward Syntax](Tutorial/MoveForwardSyntax), see my chinese post in [特性速览 – C++11右值引用/转移语义/完美转发](http://blog.cheyulin.me/?p=148)
 - [Functional-Style Quick Overview](Tutorial/Functional), about map/filter/reduce, comparing functional-style btw C++ and Python
 
+##Study Codes
+- [Boost Study](StudyCodes/BoostStudy)
+- [Functional Study](StudyCodes/FunctionalStudy)
+- [Parallel Study](StudyCodes/ParallelStudy)
+- [STL Study](StudyCodes/STLStudy)
+- [Template Study](StudyCodes/TemplateStudy)
 
+##Attention
+All codes here are not optimized to be used in the production environment.
