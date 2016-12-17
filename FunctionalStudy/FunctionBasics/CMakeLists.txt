@@ -1,1 +1,0 @@
-add_executable(basic_function_concepts basic_function_concepts.cpp)
