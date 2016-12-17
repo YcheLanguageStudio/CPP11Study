@@ -18,11 +18,15 @@
 - [Functional-Style Quick Overview](Tutorial/Functional), about map/filter/reduce, comparing functional-style btw C++ and Python
 
 ##Study Codes
-- [Boost Study](StudyCodes/BoostStudy)
-- [Functional Study](StudyCodes/FunctionalStudy)
-- [Parallel Study](StudyCodes/ParallelStudy)
-- [STL Study](StudyCodes/STLStudy)
-- [Template Study](StudyCodes/TemplateStudy)
+- [Boost Study](StudyCodes/BoostStudy), graph library, range, regex, serialization, smart-pointer, some utilities
+- [Functional Study](StudyCodes/FunctionalStudy), function object, lambda expression, `std::ref`, `std::bind`, `auto`
+- [Parallel Study](StudyCodes/ParallelStudy), pthread and cpp11 thread libraries, condition variable, mutex, atomic, future
+- [STL Study](StudyCodes/STLStudy), stl algorithm, container and utilities
+- [Template Study](StudyCodes/TemplateStudy), template meta-programming and template normal programming
 
 ##Attention
 All codes here are not optimized to be used in the production environment.
+
+##Links
+- [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines)
+- [CppReferenceSite](http://en.cppreference.com/w/cpp)
