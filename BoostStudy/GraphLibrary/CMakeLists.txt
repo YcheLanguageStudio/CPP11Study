@@ -1,2 +1,2 @@
 add_executable(BGLFindCliques ./BGLFindCliquesTest.cpp)
-add_executable(BoostTestBGL ./BGLTest.cpp)
+add_executable(PropertyMapDemo property_map_demo.cpp)
