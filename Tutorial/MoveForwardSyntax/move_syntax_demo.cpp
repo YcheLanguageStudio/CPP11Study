@@ -5,7 +5,6 @@
 #include <vector>
 #include <iostream>
 
-#define ENABLE_MOVE
 using namespace std;
 
 class my_string {

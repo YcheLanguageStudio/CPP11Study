@@ -1,1 +1,0 @@
-add_executable(biset_study biset_study.cpp)
