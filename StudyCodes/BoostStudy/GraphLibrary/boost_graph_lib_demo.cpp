@@ -2,8 +2,9 @@
 // Created by cheyulin on 12/20/16.
 //
 
-#include <boost/graph/adjacency_list.hpp>
 #include <iostream>
+
+#include <boost/graph/adjacency_list.hpp>
 
 #include "../../Utilities/pretty_print.h"
 
@@ -16,31 +17,27 @@ enum vertex_location_t {
 enum edge_length_t {
     edge_length
 };
-enum graph_notes_t {
-    graph_notes
+enum graph_note_t {
+    graph_note
 };
 
 namespace boost {
     BOOST_INSTALL_PROPERTY(vertex, location);
     BOOST_INSTALL_PROPERTY(edge, length);
-    BOOST_INSTALL_PROPERTY(graph, notes);
+    BOOST_INSTALL_PROPERTY(graph, note);
 }
 
-using VertexProperties=property<vertex_name_t, string, property<vertex_location_t,
-        array<int, 2>, property<vertex_index_t, int>>>;
+using VertexProperties=property<vertex_name_t, string, property<vertex_location_t, array<int, 2>, property<vertex_index_t, int>>>;
 using EdgeProperties=property<edge_length_t, double>;
-using GraphProperties=property<graph_name_t, string, property<graph_notes_t, string>>;
-using Graph=adjacency_list<setS, vecS, undirectedS, VertexProperties, EdgeProperties, GraphProperties>;
-using GraphWithEdgeProperty=adjacency_list<setS, vecS, undirectedS, no_property, EdgeProperties>;
+using GraphProperties=property<graph_name_t, string, property<graph_note_t, string>>;
 
-void DemoSimpleGraph() {
-    cout << "Demo Simple Graph Property:" << endl;
-
+void DemoComplexGraph() {
+    cout << "Demo Complex Graph Property:" << endl;
+    using Graph=adjacency_list<setS, vecS, undirectedS, VertexProperties, EdgeProperties, GraphProperties>;
     Graph g;
     property_map<Graph, vertex_location_t>::type vertex_location_map = boost::get(vertex_location, g);
     property_map<Graph, vertex_index_t>::type vertex_index_map = boost::get(vertex_index, g);
     property_map<Graph, edge_length_t>::type edge_length_map = boost::get(edge_length, g);
-
     graph_traits<Graph>::vertex_descriptor a, b, c;
     graph_traits<Graph>::edge_descriptor ed;
 
@@ -61,6 +58,7 @@ void DemoSimpleGraph() {
     edge_length_map[ed] = 1.4;
 
     cout << "degree of a:" << degree(a, g) << endl;
+
     for (auto vp = vertices(g); vp.first != vp.second; ++vp.first) {
         cout << "vertex index:" << vertex_index_map[*vp.first] << endl;
         cout << "vertex location :" << vertex_location_map[*vp.first] << endl;
@@ -71,24 +69,33 @@ void DemoSimpleGraph() {
     }
 }
 
-void DemoGraphWithEdgeProperty() {
+void DemoGraphWithOnlyEdgeProperty() {
     cout << "\nDemo Edge Property:" << endl;
-    bool inserted_flag;
-    graph_traits<GraphWithEdgeProperty>::vertex_descriptor aa, bb, cc;
+    using GraphWithEdgeProperty=adjacency_list<setS, vecS, undirectedS, no_property, EdgeProperties>;
     GraphWithEdgeProperty graph;
-    aa = add_vertex(graph);
-    bb = add_vertex(graph);
-    add_vertex(graph);
-    property_map<GraphWithEdgeProperty, edge_length_t>::type edge_length_map2 = boost::get(edge_length, graph);
+    property_map<GraphWithEdgeProperty, vertex_index_t>::type vertex_index_map = boost::get(vertex_index, graph);
+    property_map<GraphWithEdgeProperty, edge_length_t>::type edge_length_map = boost::get(edge_length, graph);
+    graph_traits<GraphWithEdgeProperty>::vertex_descriptor a, b;
     graph_traits<GraphWithEdgeProperty>::edge_descriptor ed2;
 
-    std::tie(ed2, inserted_flag) = add_edge(aa, bb, graph);
-    property_map<Graph, edge_length_t>::type edge_length_map = boost::get(edge_length, graph);
+    a = add_vertex(graph);
+    b = add_vertex(graph);
+    add_vertex(graph);
+
+    bool inserted_flag;
+    std::tie(ed2, inserted_flag) = add_edge(a, b, graph);
     edge_length_map[ed2] = 1.55;
-    cout << edge_length_map[ed2] << endl;
+
+    for (auto vp = vertices(graph); vp.first != vp.second; ++vp.first) {
+        cout << "vertex index:" << vertex_index_map[*vp.first] << endl;
+    }
+
+    for (auto ep = edges(graph); ep.first != ep.second; ++ep.first) {
+        cout << "edge length:" << edge_length_map[*ep.first] << endl;
+    }
 }
 
 int main() {
-    DemoSimpleGraph();
-    DemoGraphWithEdgeProperty();
+    DemoComplexGraph();
+    DemoGraphWithOnlyEdgeProperty();
 }
