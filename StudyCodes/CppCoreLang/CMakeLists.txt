@@ -1,2 +1,4 @@
 add_executable(function_ret_val_demo FunctionRetVal/function_ret_val_demo.cpp big_object.h)
-add_executable(SimpleTest FunctionRetVal/function_ret_val_demo1.cpp big_object.h)
+add_executable(function_rest_val+demo1 FunctionRetVal/function_ret_val_demo1.cpp big_object.h)
+add_executable(move_forward LValueRValueMoveForward/move_forward_demo.cpp)
+add_executable(lambdas_demo Lambdas/lamdas_demo.cpp)

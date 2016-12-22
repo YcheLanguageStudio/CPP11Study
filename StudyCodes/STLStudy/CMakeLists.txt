@@ -1,5 +1,4 @@
-add_executable(ExtHashMap Container/ExtHashMap.cpp Container/EmplaceBack.cpp)
-add_executable(STLStudy Container/STLTest.cpp)
+add_executable(ExtHashMap Container/EmplaceBack.cpp)
 
 add_executable(SetUnionTest Algorithm/SetUnionTest.cpp)
 add_executable(HashSet Container/HashSet.cpp)

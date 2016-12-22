@@ -1,0 +1,1 @@
+add_executable(stl_algo_demo STLAlgorithm/stl_algorithm.cpp)

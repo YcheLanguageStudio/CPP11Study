@@ -13,5 +13,5 @@ add_subdirectory(StudyCodes/ParallelStudy/OpenMpStudy)
 add_subdirectory(StudyCodes/STLStudy)
 add_subdirectory(StudyCodes/OtherStudy)
 add_subdirectory(StudyCodes/CppCoreLang)
-
+add_subdirectory(StudyCodes/CppCoreLib)
 
