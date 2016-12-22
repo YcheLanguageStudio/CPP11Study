@@ -43,7 +43,7 @@ struct complex_struct {
     double w2;
 
 //    bool operator==(const complex_struct &right_struct) {
-//        return this->integer == right_struct.integer;
+//        return this->wrapper_vec == right_struct.wrapper_vec;
 //    }
 };
 
