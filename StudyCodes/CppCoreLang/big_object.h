@@ -62,4 +62,22 @@ struct BigObject {
     }
 };
 
+struct President {
+    std::string name;
+    std::string country;
+    int year;
+
+    President(std::string p_name, std::string p_country, int p_year)
+            : name(std::move(p_name)), country(std::move(p_country)), year(p_year) {
+        std::cout << "I am being constructed.\n";
+    }
+
+    President(President &&other)
+            : name(std::move(other.name)), country(std::move(other.country)), year(other.year) {
+        std::cout << "I am being moved.\n";
+    }
+
+    President &operator=(const President &other) = default;
+};
+
 #endif //CPP11FEATURESSTUDY_BIG_OBJECT_H

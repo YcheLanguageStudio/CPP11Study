@@ -19,9 +19,8 @@
 
 ##Study Codes
 - [Cpp Core-Language Study](StudyCodes/CppCoreLang), cpp core language features including l-value/r-value, move/forward, lambdas,
-- [Cpp Core-Lib Study](StudyCodes/CppCoreLib), cpp libraries utilities study
+- [Cpp Core-Lib Study](StudyCodes/CppCoreLib), cpp libraries study, including stl algorithms, containers, utilities
 - [Boost Study](StudyCodes/BoostStudy), graph library, range, regex, serialization, smart-pointer, some utilities
-- [STL Study](StudyCodes/STLStudy), stl algorithm, container and utilities
 - [Template Study](StudyCodes/TemplateStudy), template meta-programming and template normal programming
 - [Functional Study](StudyCodes/FunctionalStudy), function object, lambda expression, `std::ref`, `std::bind`, `auto`
 - [Parallel Study](StudyCodes/ParallelStudy), pthread and cpp11 thread libraries, condition variable, mutex, atomic, future

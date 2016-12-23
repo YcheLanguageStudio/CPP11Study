@@ -20,7 +20,25 @@ void DemoSTLAssignErase() {
     cout << vec1 << endl;
 }
 
+void DemoSortSetUnion() {
+    auto v1 = vector<int>{1, 4, 2, 6};
+    auto v2 = vector<int>{8, 1, 2, 7, 3};
+    vector<int> v3;
+    vector<int> v4;
+
+    sort(v1.begin(), v1.end());
+    sort(v2.begin(), v2.end());
+    cout << v1 << v2 << endl;
+
+    set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), back_inserter(v3));
+    cout << v3 << endl;
+
+    set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), back_inserter(v4));
+    cout << v4 << endl;
+}
+
 
 int main() {
     DemoSTLAssignErase();
+    DemoSortSetUnion();
 }
