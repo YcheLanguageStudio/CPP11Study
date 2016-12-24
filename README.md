@@ -24,6 +24,7 @@
 - [Template Study](StudyCodes/TemplateStudy), template meta-programming and template normal programming
 - [Functional Study](StudyCodes/FunctionalStudy), function object, lambda expression, `std::ref`, `std::bind`, `auto`
 - [Parallel Study](StudyCodes/ParallelStudy), pthread and cpp11 thread libraries, condition variable, mutex, atomic, future
+- [Utilities](StudyCodes/Utilities), third-party utilities to make demo codes simple
 
 ##Attention
 All codes here are not optimized to be used in the production environment.

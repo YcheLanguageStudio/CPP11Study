@@ -1,4 +1,4 @@
-#Functional
+#Function
 add_executable(BindTest BindTest.cpp)
 add_executable(FunctionalTest FunctionTest.cpp)
 add_executable(FunctionStudy FunctionStudy.cpp)

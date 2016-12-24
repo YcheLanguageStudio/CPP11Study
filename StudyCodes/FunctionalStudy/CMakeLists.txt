@@ -1,4 +1,4 @@
 add_subdirectory(Ref)
-add_subdirectory(Functional)
+add_subdirectory(Function)
 add_subdirectory(Lambdas)
 

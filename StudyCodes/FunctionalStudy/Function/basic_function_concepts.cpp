@@ -5,7 +5,7 @@
 
 using namespace std;
 
-struct function_object {
+struct FunctionObject {
     int operator()(int a, int b) {
         return a + b;
     }
@@ -26,11 +26,12 @@ int main() {
     //You can get the address of a function simply by naming it:
     //Or by prefixing the name of the function with an ampersand:
     function_ptr = add;
+    cout << "function pointer demo, add 2 and 3, result:" << (*function_ptr)(2, 3) << endl;
     cout << "function pointer demo, add 2 and 3, result:" << function_ptr(2, 3) << endl;
 
     function_ptr = multiply;
     cout << "function pointer demo, multiply 2 and 3, result:" << function_ptr(2, 3) << endl;
 
-    function_object func_obj;
+    FunctionObject func_obj;
     cout << "function object demo, add 2 and 3, result:" << func_obj(2, 3) << endl;
 }

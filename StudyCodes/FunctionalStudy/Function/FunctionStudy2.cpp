@@ -9,7 +9,7 @@ using namespace std;
 
 struct MyClass {
     void PrintHello() {
-        //function_object() is ret_function, then we call ret_function()
+        //FunctionObject() is ret_function, then we call ret_function()
         cout << "Ret:" << function_object()(111) << endl;
         cout << "Ret:" << function_object0(2.0)(222)<<endl;
         //Directly call function_object2
@@ -17,7 +17,7 @@ struct MyClass {
         function_object3();
     }
 
-    //function_object hold ret_function, whole type is function<void(void)> object
+    //FunctionObject hold ret_function, whole type is function<void(void)> object
     //functional programming:
     function<int(int)> function_object() {
         function<int(int)> ret_function;
