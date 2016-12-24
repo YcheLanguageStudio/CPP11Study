@@ -11,21 +11,17 @@
 using namespace std;
 using namespace boost;
 
-enum vertex_location_t {
-    vertex_location
-};
-enum edge_length_t {
-    edge_length
-};
-enum graph_note_t {
-    graph_note
-};
+#define BOOST_DEF_PROPERTY(KIND, NAME) \
+  enum KIND##_##NAME##_t { KIND##_##NAME }; \
+  BOOST_INSTALL_PROPERTY(KIND, NAME)
 
 namespace boost {
-    BOOST_INSTALL_PROPERTY(vertex, location);
-    BOOST_INSTALL_PROPERTY(edge, length);
-    BOOST_INSTALL_PROPERTY(graph, note);
+    BOOST_DEF_PROPERTY(vertex, location);
+    BOOST_DEF_PROPERTY(edge, length);
+    BOOST_DEF_PROPERTY(graph, note);
 }
+#undef BOOST_DEF_PROPERTY
+
 
 using VertexProperties=property<vertex_name_t, string, property<vertex_location_t, array<int, 2>, property<vertex_index_t, int>>>;
 using EdgeProperties=property<edge_length_t, double>;
