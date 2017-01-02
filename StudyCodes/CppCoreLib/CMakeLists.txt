@@ -1,4 +1,8 @@
 add_executable(stl_algo_demo STLAlgorithm/stl_algorithm.cpp)
+
 add_executable(stl_simple_usage STLContainer/stl_simple_usage.cpp)
+
+add_executable(stl_iter_io_usage STLIterator/stl_iter_io_demo.cpp)
+
 add_executable(stl_utility_demo STLUtility/utility_usage.cpp)
 add_executable(stl_chrono_demo STLUtility/chrono_usage.cpp)
