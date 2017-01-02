@@ -6,7 +6,7 @@
 #include <fstream>
 #include <set>
 #include <iterator>
-
+#include <algorithm>
 using namespace std;
 
 int main() {
