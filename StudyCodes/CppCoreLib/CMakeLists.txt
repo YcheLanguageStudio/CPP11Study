@@ -8,3 +8,5 @@ add_executable(stl_utility_demo STLUtility/utility_usage.cpp)
 add_executable(stl_chrono_demo STLUtility/chrono_usage.cpp)
 
 add_executable(stl_lock_mechanism STLConcurrency/stl_cocurrency_lock_mechanism.cpp)
+add_executable(stl_packaged_task STLConcurrency/stl_packaged_task.cpp)
+add_executable(stl_async STLConcurrency/stl_async.cpp)
