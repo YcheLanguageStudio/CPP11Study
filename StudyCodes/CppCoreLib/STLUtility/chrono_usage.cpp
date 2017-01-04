@@ -33,7 +33,16 @@ void DemoDurationCast() {
     cout << duration_cast<milliseconds>(t1 - t0).count() << "ms" << endl;
 }
 
+void DemoDurationCast1() {
+    time_point<high_resolution_clock> start, end;
+    start = high_resolution_clock::now();
+    cout << "f(42) = " << fibonacci(42) << '\n';
+    end = high_resolution_clock::now();
+    cout << duration_cast<milliseconds>(end - start).count() << "ms" << endl;
+}
+
 int main() {
     DemoBasicDuration();
     DemoDurationCast();
+    DemoDurationCast1();
 }
