@@ -1,4 +1,5 @@
 add_executable(stl_algo_demo STLAlgorithm/stl_algorithm.cpp)
+add_executable(stl_functional_demo STLAlgorithm/stl_functional.cpp)
 
 add_executable(stl_simple_usage STLContainer/stl_simple_usage.cpp)
 
