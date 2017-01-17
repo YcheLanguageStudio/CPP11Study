@@ -37,8 +37,19 @@ void DemoSortSetUnion() {
     cout << v4 << endl;
 }
 
+void DemoMinElement() {
+    auto v = vector<int>();
+    auto iter = min_element(begin(v), end(v));
+    cout << iter - begin(v) << endl;
+    if (iter == v.end()) {
+        cout << "end" << endl;
+    } else {
+        cout << *iter << endl;
+    }
+}
 
 int main() {
     DemoSTLAssignErase();
     DemoSortSetUnion();
+    DemoMinElement();
 }
