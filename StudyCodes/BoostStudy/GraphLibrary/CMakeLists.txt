@@ -1,3 +1,5 @@
 add_executable(BGLFindCliques boost_graph_lib_find_cliques_demo.cpp)
 add_executable(BoostTestBGL boost_graph_lib_demo.cpp)
 add_executable(boost_csr_representation boost_graph_csr.cpp)
+add_executable(boost_csr_representation0 boost_graph_csr0.cpp)
+add_executable(boost_graph_viz_demo boost_graphviz_demo.cpp)
