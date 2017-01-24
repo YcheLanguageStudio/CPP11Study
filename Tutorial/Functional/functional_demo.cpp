@@ -89,7 +89,7 @@ int main() {
     DemoFilter(my_int_list, my_str_list);
     DemoFold(my_int_list, my_str_list);
 
-    //Other Utilities
+    //Other utility
     DemoPartition();
     DemoFind();
 }

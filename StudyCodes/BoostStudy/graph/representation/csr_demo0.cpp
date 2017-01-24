@@ -59,10 +59,5 @@ int main() {
             std::cout << "  " << g[source(e, g)].url << " -> " << g[target(e, g)].url << std::endl;
         }
 
-    // Output the graph in DOT format
-//    dynamic_properties dp;
-//    dp.property("label", boost::get(&WebPage::url, g));
-//    std::ofstream out("web-graph.dot");
-//    write_graphviz(std::cout, g, dp, std::string(), boost::get(vertex_index, g));
     return 0;
 }

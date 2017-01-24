@@ -1,0 +1,6 @@
+add_executable(BGLFindCliques algorithm/find_cliques_demo.cpp)
+add_executable(BoostTestBGL overall_demo.cpp)
+add_executable(boost_csr_representation representation/csr_demo1.cpp)
+add_executable(boost_csr_representation0 representation/csr_demo0.cpp)
+add_executable(boost_graph_viz_demo input_output/graphviz_demo.cpp)
+add_executable(boost_property_map_demo property_map/property_map_demo.cpp)

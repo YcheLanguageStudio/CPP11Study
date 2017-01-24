@@ -1,7 +1,7 @@
 #BoostTest
-add_subdirectory(Regex)
-add_subdirectory(GraphLibrary)
-add_subdirectory(RangeMeta)
-add_subdirectory(SmartPtr)
-add_subdirectory(Utilities)
-add_subdirectory(Serialization)
+add_subdirectory(regex)
+add_subdirectory(graph)
+add_subdirectory(range)
+add_subdirectory(smart_ptr)
+add_subdirectory(utility)
+add_subdirectory(serialization)

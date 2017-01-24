@@ -17,7 +17,7 @@ void testFunctionalWithLambda() {
         return i < 2 ? 1 : fib(i - 1) + fib(i - 2);
     };
 
-    cout << "Test recursive functional object:" << endl;
+    cout << "software_test recursive functional object:" << endl;
     for (int i = 0; i < 10; i++) {
         cout << fib(i) << ' ';
     }
