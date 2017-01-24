@@ -51,6 +51,7 @@ namespace boost {
     BOOST_INSTALL_PROPERTY(vertex, first_name);
 }
 
+
 template<class EdgeIter, class Graph>
 void who_owes_who(EdgeIter first, EdgeIter last, const Graph &G) {
     // Access the propety acessor type for this graph
@@ -62,7 +63,7 @@ void who_owes_who(EdgeIter first, EdgeIter last, const Graph &G) {
 
     while (first != last) {
         src_name = boost::get(name, source(*first, G));
-        targ_name = boost::get(name, target(*first, G));
+        targ_name = name[target(*first, G)];
         cout << src_name << " owes " << targ_name << " some money" << endl;
         ++first;
     }
@@ -91,6 +92,9 @@ int main() {
         name[4] = "Kinis"; // you can use operator[] too
 
         who_owes_who(edges(G).first, edges(G).second, G);
+
+        cout << num_vertices(G) << endl;
+        cout << num_edges(G) << endl;
     }
 
     cout << endl;
