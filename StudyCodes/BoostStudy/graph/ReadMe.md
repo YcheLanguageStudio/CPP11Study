@@ -7,6 +7,12 @@
 ###Adjacency Matrix
 
 ##Property Map
+
+Comment: make use of meta-programming, makes it possible to access generated class member without runtime overhead, just 
+simply giving a guidance of which member to access. 
+
+`property<xxx, property<...>>` seems to generate a tuple-like struct in compile-time.
+
 ###Usage Demo
 - set value usage
 
