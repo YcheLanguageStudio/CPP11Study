@@ -38,16 +38,14 @@ int main() {
                      E(5, 2)};
 
     using WebGraph=compressed_sparse_row_graph<directedS, WebPage>;
-    WebGraph g(edges_are_sorted, std::begin(the_edges), std::end(the_edges), 6u);
+    WebGraph g(edges_are_unsorted, std::begin(the_edges), std::end(the_edges), 6u);
 
     // Set the URLs of each vertex
     int index = 0;
     BGL_FORALL_VERTICES(v, g, WebGraph) {
             g[v].url = urls[index++];
             std::cout << "out deg of v:" << v << " is :" << out_degree(v, g) << std::endl;
-            BGL_FORALL_ADJ(v, u, g, WebGraph) {
-                    std::cout << u << std::endl;
-                }
+            std::cout << "in deg of v:" << v << " is :" << out_degree(v, g) << std::endl;
         }
 
     // Output each of the links

@@ -48,8 +48,18 @@ void DemoMinElement() {
     }
 }
 
+void DemoUnique() {
+    auto edge_pair_vec = vector<pair<int, int>>{{1, 2},
+                                                {1, 2},
+                                                {2, 3}};
+    auto last = std::unique(begin(edge_pair_vec), end(edge_pair_vec));
+    edge_pair_vec.erase(last, edge_pair_vec.end());
+    cout << edge_pair_vec << endl;
+}
+
 int main() {
     DemoSTLAssignErase();
     DemoSortSetUnion();
     DemoMinElement();
+    DemoUnique();
 }
